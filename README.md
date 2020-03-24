@@ -1,6 +1,2 @@
 # grupo_8_Swapner
-Sebastian Segui - Facundo Lonardi - Milton Chico
-Ver 2
-
-Esto lo puse yo
-Milton
+Swapner es una Pagina web la cual su objetivo es el trueque de objetos. Esta inspirada en Mercadolibre y Tinder. Va estar pensada para personas mayores de 18 anios
