@@ -1,6 +1,6 @@
-# grupo_8_Swapner
+# grupo_8_Swapper
 
-Swapner es una Pagina web la cual su objetivo es el trueque,compra y venta  de objetos. Esta inspirada en Mercadolibre y Tinder. Va estar pensada para personas mayores de 18 anios.
+Swapper es una Pagina web la cual su objetivo es el trueque,compra y venta  de objetos. Esta inspirada en Mercadolibre y Tinder. Va estar pensada para personas mayores de 18 anios.
 
 El sistema de interaccion va a ser similiar al de Tinder (Swipe) fusionado con Mercado libre (por sus operaciones), en donde en la pantalla principal de la pagina aparecera, despues de haber seleccionado algunas de las 3 opciones de arriba diferentes rangos de precio, ubicacion , y en que categoria se encuentra el objeto,
 en la pantalla solo aparecera un objeto, en el cual nosotros como usuario vamos a tener 3 opciones para 
