@@ -21,3 +21,7 @@ el usuario al momento de comprar/vender
 El diseño es mas interactivo , y esta mas llevado al lado de Tinder, con tan solo 3 opciones que les damos
 poder definir una accion a hacer, solo brindaremos mas informacion si un usuario ingresa al producto, sino
 lo mostraremos simple como esta
+
+
+Link a boceto de pagina:
+https://marvelapp.com/ab79d78
