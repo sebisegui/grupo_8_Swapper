@@ -1,0 +1,22 @@
+{
+  "name": "swapper",
+  "version": "1.0.0",
+  "description": "Swapper es una Pagina web la cual su objetivo es el trueque,compra y venta  de objetos. Esta inspirada en Mercadolibre y Tinder. Va estar pensada para personas mayores de 18 anios.",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebisegui/grupo_8_Swapner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebisegui/grupo_8_Swapner/issues"
+  },
+  "homepage": "https://github.com/sebisegui/grupo_8_Swapner#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
