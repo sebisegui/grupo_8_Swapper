@@ -14,90 +14,162 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
-<header>
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
+
+
 
   
-    <img src="/images/Logo.png">
-    <img src="/images/Logo.png">
-  
-    <form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <ul class="navbar-nav " id="noticon" >
-      <li class="nav-item" >
-        <a class="nav-link" href="#">
-          <i class="fa fa-bell">
-            <span class="badge badge-info">11</span>
-          </i>
-          Notification
-        </a>
-      </li>
-    </ul>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class='fa fa-user-circle'></i>
-          Profile
-          <span class="sr-only">(current)</span>
-          </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-envelope-o">
-            <span class="badge badge-danger">5</span>
-          </i>
-          Messages
-        </a>
-      </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-tags" aria-hidden="true"></i>
-          Category
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Electronic</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Home</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Cloth</a>
-        </div>
-      </li>
-    </ul>
-    <!--<form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <ul class="navbar-nav " id="noticon" >
-      <li class="nav-item" >
-        <a class="nav-link" href="#">
-          <i class="fa fa-bell">
-            <span class="badge badge-info">11</span>
-          </i>
-          Notification
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-globe">
-            <span class="badge badge-success">11</span>
-          </i>
-          Test
-        </a>
-      </li>-->
-    </ul>
-  </div>
-</nav>
-</header>
-  
 <body>
+  <header>
+  <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
+  
+    
+      <img src="/images/Logo.png">
+      <img src="/images/Logo.png">
+    
+      <form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav " id="noticon" >
+        <li class="nav-item" >
+          <a class="nav-link" href="#">
+            <i class="fa fa-bell">
+              <span class="badge badge-info">11</span>
+            </i>
+            Notification
+          </a>
+        </li>
+      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class='fa fa-user-circle'></i>
+            Profile
+            <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-danger">5</span>
+            </i>
+            Messages
+          </a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Electronic</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Home</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Cloth</a>
+          </div>
+        </li>
+      </ul>
+      <!--<form class="form-inline my-2 my-lg-0" id="navBarSearchForm">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav " id="noticon" >
+        <li class="nav-item" >
+          <a class="nav-link" href="#">
+            <i class="fa fa-bell">
+              <span class="badge badge-info">11</span>
+            </i>
+            Notification
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-globe">
+              <span class="badge badge-success">11</span>
+            </i>
+            Test
+          </a>
+        </li>-->
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <sider>
+    <div class= "container-fluid-sider">
+     <div class="row">
+      <div class="col-12 col-md-12 col-lg-12" id="Columna-swapp">
+        <h2 class="swapp">
+          Swapp
+        </h2>
+      </div>
+    </div>
+    
+    <!--MATCHES-->
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+        <div class="col-12 col-lg-6" id="matches" >
+          <section class="product-box">
+            <a href='' >
+              <figure class="product-box_image">
+                <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
+              </figure>
+              <article class="product-box_data">
+                <p>Descripcion</p>
+              </article>
+            </a>
+          </section>
+        </div>
+        <div class="col-12 col-lg-6" id=matches>
+          <section class="product-box">
+            <a href='' >
+              <figure class="product-box_image">
+                <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
+              </figure>
+              <article class="product-box_data">
+                <p>descripcion</p>
+              </article>
+            </a>
+          </section>
+        </div>
+        <div class="col-12 col-lg-6" id=matches>
+          <section class="product-box">
+            <a href='' >
+              <figure class="product-box_image">
+                <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
+              </figure>
+              <article class="product-box_data">
+                <p>descripcion</p>
+              </article>
+            </a>
+          </section>
+        </div>
+        <div class="col-12 col-lg-6" id=matches>
+          <section class="product-box">
+            <a href='' >
+              <figure class="product-box_image">
+                <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
+              </figure>
+              <article class="product-box_data">
+                <p>descripcion</p>
+              </article>
+            </a>
+          </section>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+</sider>
+</body>
     
 
 
