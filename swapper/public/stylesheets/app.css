@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+.login-title{
+  text-align: center
+}
+  
+#log{
+  padding-left:30%;
+  padding-right: 30%;
+}
 
+#log2{
+  padding: 30px;
+}
+
+
+
+#mainfot{
+  margin-top: 290px;
+}
 #fotofooter{
-  width: 30%;
+  width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto
@@ -12,6 +29,7 @@
 
 .main-footer{
 background-color: #ef4a22;
+opacity: 80%;
 /*display: flex;
 flex-wrap: wrap;
 flex-direction: row;

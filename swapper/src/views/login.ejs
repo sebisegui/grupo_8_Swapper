@@ -20,41 +20,35 @@
             <img src="/images/Logo.png">
     </header>
     
-    <div class="container-fluid products-wrapper">
+    <div class="container-fluid products-wrapper"id="log">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Crea tu usuario!</h2>
+				<h2 class="login-title">Log in</h2>
 			</div>
         </div>
-        <div class="col-12 formulario">
+        <div class="col-12 formulario" id="loginform">
 			<form action="/product/create" method="POST">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6 ">
-						<label for="name" class="form-label">Nombre completo: </label>
-						<input type="text" id="name" name="name" class="form-input">
-                    </div>
-                    <div class="col-12 col-md-6 ">
-						<label for="dni" class="form-label">DNI: </label>
-						<input type="text" id="dni" name="dni" class="form-input">
-					</div>
-					<div class="col-12 col-md-6 ">
+				<div class="row product-detail" id="log2">
+					
+					<div class="col-12 ">
 						<label for="username" class="form-label">Nombre de usuario:</label>
 						<input type="text" id="username" name="username" class="form-input">
 					</div>
-					<div class="col-12 col-md-6 ">
+					
+					<div class="col-12  ">
 						<label for="email" class="form-label">Email:</label>
 						<input type="email" id="email" name="email" class="form-input">
 					</div>
-					<div class="col-12 col-md-6 ">
-						<label for="password" class="form-label">Contraseña:</label>
-                        <input type="password" id="password" name="password" class="form-input">
-                    </div>
-					<div class="col-12 col-md-6 ">
-						<label for="password2" class="form-label">Reescribir contraseña:</label>
-						<input type="password" name="password2" id="password2" class="form-input">
-					</div>
+				
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Crear usuario</button>
+						<div class="d-flex">
+						<div class="p-2 ">
+						<button type="submit" class="buy-now-button">Log in</button>
+						</div>
+						<div class="p-2 ml-auto">
+						<button type="submit" class="buy-now-button" id="crearuser">Crear usuario</button>
+					</div>
+				</div>
 					</div>
 				</div>
 			</form>
@@ -81,7 +75,7 @@
 			</div>
 			<div class="col-6">
 				<article class="footer-data" >
-					<img src="/images/Logo.png" id="fotofooter">  
+					<img src="/images/Logo-completo.png" id="fotofooter">  
 				</article>
 			</div>
 			

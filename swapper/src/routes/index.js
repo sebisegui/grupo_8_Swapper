@@ -10,4 +10,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/register',userController.register);
 
+router.get('/login',userController.login);
+
 module.exports = router;
