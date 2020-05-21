@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracion</title>
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+    crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body class="fondo">
+    <header>
+        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
+            <img src="/images/Logo.png">
+    </header>
+    
+    <div class="container-fluid products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Crea tu usuario!</h2>
+			</div>
+        </div>
+        <div class="col-12 formulario">
+			<form action="/product/create" method="POST">
+				<div class="row product-detail">
+					<div class="col-12 col-md-6 ">
+						<label for="name" class="form-label">Nombre completo: </label>
+						<input type="text" id="name" name="name" class="form-input">
+                    </div>
+                    <div class="col-12 col-md-6 ">
+						<label for="dni" class="form-label">DNI: </label>
+						<input type="text" id="dni" name="dni" class="form-input">
+					</div>
+					<div class="col-12 col-md-6 ">
+						<label for="username" class="form-label">Nombre de usuario:</label>
+						<input type="text" id="username" name="username" class="form-input">
+					</div>
+					<div class="col-12 col-md-6 ">
+						<label for="email" class="form-label">Email:</label>
+						<input type="email" id="email" name="email" class="form-input">
+					</div>
+					<div class="col-12 col-md-6 ">
+						<label for="password" class="form-label">Contraseña:</label>
+                        <input type="password" id="password" name="password" class="form-input">
+                    </div>
+					<div class="col-12 col-md-6 ">
+						<label for="password2" class="form-label">Reescribir contraseña:</label>
+						<input type="password" name="password2" id="password2" class="form-input">
+					</div>
+					<div class="col-12">
+						<button type="submit" class="buy-now-button">Crear usuario</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>
