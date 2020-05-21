@@ -107,6 +107,37 @@ img{
   width: 100%;
   padding-right: 0;
 }
+
+/*register*/
+.fondo{
+  background-color: antiquewhite;
+}
+
+.products-wrapper{
+  margin-top: 20px;
+}
+.formulario{
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid lightgrey ;
+  
+}
+.form-label{
+  display: inline-block;
+  margin: 10px
+}
+
+.form-input{
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: solid 1px gray;
+  height: 40px;
+  width: 100%;
+}
 @media (min-width: 360px) {
 
     #navBarSearchForm input[type=text]{width:150px !important;}
