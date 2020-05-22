@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+.btn-danger{
+  margin-right: 70px;
+}
+
+.container2{
+
+  margin-left: 15px;
+  width: 100%;
+  background-color: antiquewhite
+  ;
+}
 .login-title{
   text-align: center
 }
-  
+.fondo{
+  background-image: url("../images/logo-completo.png");
+}
 #log{
   padding-left:30%;
   padding-right: 30%;
@@ -20,7 +33,7 @@
   margin-top: 290px;
 }
 #fotofooter{
-  width: 50%;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto
@@ -36,12 +49,18 @@ flex-direction: row;
 justify-content: center;*/
 
 }
-
+#sobre{
+  margin-left: 60px;
+}
+#contacto{
+  margin-top: 15px;
+}
 #mailfooter{
 align-self: center;
 display: block;
 margin-left: auto;
-margin-right: auto
+margin-right: auto;
+font-size: 15px;
 
   
 }
