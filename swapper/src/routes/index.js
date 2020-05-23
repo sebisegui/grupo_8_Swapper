@@ -12,4 +12,6 @@ router.get('/register',userController.register);
 
 router.get('/login',userController.login);
 
+router.get('/mensajes',userController.mensajes);
+
 module.exports = router;

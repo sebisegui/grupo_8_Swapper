@@ -9,7 +9,12 @@ const userController ={
 
     login: (req,res) =>{
         res.render('login')
-    }
+    },
+
+    mensajes: (req,res) =>{
+        res.render('mensajes')
+    },
+
 }
 
 module.exports = userController
