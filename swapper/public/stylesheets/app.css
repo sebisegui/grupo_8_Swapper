@@ -23,8 +23,9 @@
 .srch_bar {
   display: inline-block;
   text-align: right;
-  width: 60%; padding:
+  width: 60%; 
 }
+
 .headind_srch{ padding:10px 29px 10px 20px; overflow:hidden; border-bottom:1px solid #c4c4c4;}
 
 .recent_heading h4 {
@@ -188,7 +189,7 @@ margin-top: 300px;
 
 
 #mainfot{
-  margin-top: 290px;
+  margin-top: 0px;
 }
 #fotofooter{
   width: 100%;
