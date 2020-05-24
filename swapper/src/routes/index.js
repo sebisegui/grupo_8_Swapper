@@ -14,4 +14,8 @@ router.get('/login',userController.login);
 
 router.get('/mensajes',userController.mensajes);
 
+router.get('/detalle', userController.detalle);
+
+router.get('/cargar', userController.formulario);
+
 module.exports = router;

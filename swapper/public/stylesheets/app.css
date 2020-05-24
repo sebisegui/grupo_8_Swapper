@@ -202,6 +202,7 @@ margin-top: 300px;
 .main-footer{
 background-color: #ef4a22;
 opacity: 80%;
+width:100%
 /*display: flex;
 flex-wrap: wrap;
 flex-direction: row;
@@ -269,8 +270,53 @@ img{
   display: block;
 }
 
+/* CREADO POR MILTON */
+.carrousel{
+  display: flex;
+  justify-content: center;
+}
+.list-group{
+  margin-top: 10%;
+  width: 93%;
+}
 
-  
+.flotar{
+  display: flex;
+  float: left;
+  justify-content: left;
+}
+
+.map  {
+  margin-left: 10px;
+  margin-top: 18px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 18px;
+}
+
+.formularios{
+  float: left;
+}
+
+.formularioProduct{
+  margin-top: 3%;
+}
+.form-group {
+  width: 45%;
+}
+.precioProduct{
+  display: flex;
+  float: left;
+}
+.cargaFoto figure img{
+  width: 40%;
+}
+
+/* CREADO POR MILTON */
 
 .swapp{
   font-size: 25px;

@@ -14,7 +14,14 @@ const userController ={
     mensajes: (req,res) =>{
         res.render('mensajes')
     },
-
+    detalle: (req,res) =>{
+        res.render('detalle')
+    },
+    
+    formulario: (req, res) =>{
+        res.render('formulario-carga')
+    }
+    
 }
 
 module.exports = userController
