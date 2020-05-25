@@ -2,6 +2,9 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 /*mensajes*/
+.foto-matches{
+  width: 100%;
+}
 
 #fotochat{ max-width:100%;}
 
@@ -324,8 +327,8 @@ img{
   text-align: center;
 }
 
-.foto-matches{
-  width: 100%;
+.foto-carga{
+  width: 50%;
 }
 #matches{
   display: block;
@@ -384,6 +387,9 @@ img{
 @media (max-width: 768px) {
 .product-box_data{
   display: none;
+}
+#fotofooter{
+  width: 100%;
 }
 }
 @media (min-width: 360px) {
