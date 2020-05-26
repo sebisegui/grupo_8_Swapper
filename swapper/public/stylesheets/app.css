@@ -287,18 +287,23 @@ img{
   display: flex;
   float: left;
   justify-content: left;
+  margin-bottom: 10px;
 }
 
 .map  {
   margin-left: 10px;
   margin-top: 18px;
+  
+  
+}
+.map2{
+  width: 100%;
+  
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 18px;
 }
 
 .formularios{
@@ -317,6 +322,10 @@ img{
 }
 .cargaFoto figure img{
   width: 40%;
+}
+
+.my-4{ 
+  text-align: center;
 }
 
 /* CREADO POR MILTON */
