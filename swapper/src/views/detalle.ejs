@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre Producto</title>
-    <link rel="stylesheet" href="/stylesheets/app.css">
-    <link rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
+  <%- include('./partials/head')  %>
 <body>
 
 <!-- ------------HEADER------------- -->
@@ -20,7 +8,7 @@
 <!-- ------------HEADER------------- -->
     
 <!-- ---------------CONTENEDOR PRODUCTOS------------------- -->
-
+<div class="container2">
             <div class="row">
 
               <!-- --------------------COLUMNA MATCHES--------------------- -->
@@ -156,24 +144,24 @@
             <!-- --------------------DETALLE PRODUCTOS--------------------- -->
 
               <div class="col-lg-9 col-8 col-md-9">
-              
+                <h1 class="detallesProducto"><%= producto.nombre %></h1>
                 <div class="row">
         
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                          <a href="#"><img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches"></a>
+                          <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
                         </div>  
                       </div>
         
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                      <a href="#"><img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches"></a>
+                      <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
                     </div>  
                   </div>
         
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                      <a href="#"><img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches"></a>
+                      <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
                     </div>  
                   </div>
                 
@@ -216,7 +204,7 @@
             </div>
             <!-- --------------------DETALLE PRODUCTOS--------------------- -->
           </div>
-          
+        </div>
 <!-- ---------------CONTENEDOR PRODUCTOS------------------- -->
 
 <!-- ------------FOOTER------------ -->

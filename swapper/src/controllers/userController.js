@@ -31,21 +31,46 @@ const userController ={
         res.render('formulario-carga')
     },
     edit: (req,res) =>{
-        let productToEdit = listaProductosJS.find(product => producto.id == req.params.id)
-        res.render('edit-form', {productToEdit})
+        let productToEdit = listaProductosJS.find(producto => producto.id == req.params.id)
+        res.render('edit-form', {producto:productToEdit})
     },
-    storeNew: (req,res) =>{
-        res.render('index')
+    store: (req,res) =>{
+        let storeProduct ={
+            id: listaProductosJS[listaProductosJS.length-1].id+1,
+            nombre: req.body.nombre,
+            imagen: req.body.imagen,
+            zona: req.body.zona,
+            categoria: req.body.categoria,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            estado: req.body.estado
+        }
+        listaProductosJS.push(storeProduct);
+        fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
+            res.redirect('/products/')
     },
     update: (req,res) =>{
-        res.render('index')
+        let idProducto = req.params.id;
+        listaProductosJS.forEach(producto => {
+            if(idProducto == producto.id){
+                producto.nombre = req.body.nombre,
+                producto.categoria = req.body.categoria,
+                producto.descripcion = req.body.descripcion,
+                producto.estado = req.body.estado,
+                producto.precio = req.body.precio,
+                producto.zona = req.body.zona,
+                producto.imagen = req.body.imagen
+            }});
+            fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
+            res.redirect('/products/')
     },
+
     delete: (req,res) => { 
         let deleteId = req.params.id
         let newDataBase = listaProductosJS.filter(product => product.id != deleteId)
         let newDataBaseJS = JSON.stringify(newDataBase, null, " ");
         fs.writeFileSync(productsPath, newDataBaseJS);
-        res.render('index')
+        res.redirect('/products/')
     },
     register: (req,res) =>{
         res.render('register')

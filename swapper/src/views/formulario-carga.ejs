@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registracion</title>
-    <link rel="stylesheet" href="/stylesheets/app.css">
-    <link rel="stylesheet" 
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-    crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-</head>
+  <%- include('./partials/head')  %>
 <body class="fondo">
 
 <!-- ------------HEADER------------- -->
@@ -28,52 +15,56 @@
 				<h2 class="products-title">Publica tu producto</h2>
 			</div>
         </div>
+
+        <!--formulario-->
         <div class="col-12 formulario">
 			<form action="/products/create" method="POST">
 				<div class="row product-detail">
+
 					<div class="col-12 col-md-6 ">
-						<label for="exampleFormControlInput1">Nombre del producto</label>
-              <input type="tex" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del producto">
+						<label for="nombre">Nombre del producto</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto">
                     </div>
-                    <div class="col-12 col-md-6 ">
-						<label for="exampleFormControlSelect1">Categoria</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Electronica</option>
-                <option>Moda</option>
-                <option>Hogar</option>
-                <option>Inmuebles</option>
-                <option>Bazar</option>
+
+          <div class="col-12 col-md-6 ">
+						<label for="categoria">Categoria</label>
+              <select  class="form-control" id="categoria" name="categoria">
+                <option >Electronica</option>
+                <option >Moda</option>
+                <option >Hogar</option>
+                <option >Inmuebles</option>
+                <option >Bazar</option>
               </select>
 					</div>
+				
 					<div class="col-12 col-md-6 ">
-						<label for="exampleFormControlSelect2">SubCategoria</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option>Dependiendo la cat</option>
-                <option>Dependiendo la cat</option>
-                <option>Dependiendo la cat</option>
-                <option>Dependiendo la cat</option>
-                <option>Dependiendo la cat</option>
-              </select>
-					</div>
-					<div class="col-12 col-md-6 ">
-						<label for="exampleFormControlTextarea1">Descripcion del producto</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-					</div>
-					<div class="col-12 col-md-6 ">
-            <label for="exampleFormControlFile1">Foto del producto</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+						<label for="descripcion">Descripcion del producto</label>
+              <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
           </div>
+          
+					<div class="col-12 col-md-6 ">
+            <label for="imagen">Foto del producto</label>
+            <input type="file" class="form-control-file" id="imagen" name="imagen">
+          </div>
+
           <div class="status">
-          <label for="exampleFormControlSelect1">Estado</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Nuevo</option>
-                <option>Usado</option>
+          <label for="estado">Estado</label>
+              <select class="form-control" id="estado" name="imagen">
+                <option value="nuevo">Nuevo</option>
+                <option value="usado">Usado</option>
               </select>
             </div>
+            
           <div class="precioProduct">
-            <label>Precio del producto</label>
-                <input type="number" class="form-control" aria-label="Text input with dropdown button">
+            <label for="precio">Precio del producto</label>
+                <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button">
           </div>
+
+          <div class="col-12 col-md-2 ">
+            <label for="zona">Zona</label>
+                <input id="zona" name="zona" type="text" class="form-control" >
+          </div>
+          
 					<div class="col-12">
 						<button type="submit" class="buy-now-button">Cargar producto</button>
 					</div>
@@ -83,7 +74,7 @@
 
   </div>
 
-<!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
+
 
 <!-- ------------FOOTER------------ -->
 <%- include('./partials/footer')  %> 

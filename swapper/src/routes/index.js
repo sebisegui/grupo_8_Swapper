@@ -13,7 +13,7 @@ router.get('/products', userController.index);
 // FORMULARIO CARGA PRODUCTO
 
 router.get('/products/create', userController.cargaProduct);
-router.post('/products/create', userController.storeNew)
+router.post('/products/create', userController.store)
 
 // DETALLE DE PRODUCTO
 
@@ -21,8 +21,8 @@ router.get('/products/:id', userController.detalleProduct);
 
 // FORMULARIO EDIT PRODUCTO
 
-router.get('/products/:id/edit', userController.edit)
-router.put('/products/:id', userController.update)
+router.get('/products/edit/:id', userController.edit)
+router.put('/products/edit/:id', userController.update)
 
 // ELIMINAR PRODUCTO
 
