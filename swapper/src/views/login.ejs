@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registracion</title>
+    <title>Swapper</title>
     <link rel="stylesheet" href="/stylesheets/app.css">
     <link rel="stylesheet" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
@@ -15,11 +15,17 @@
 
 </head>
 <body class="fondo">
+
+<!-- ---------------HEADER------------------- -->
     <header>
         <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
             <img src="/images/Logo.png">
     </header>
-    
+
+<!-- ---------------HEADER------------------- -->  
+
+<!-- ---------------FORMULARIO INICIO SESION------------------- -->
+
     <div class="container-fluid products-wrapper"id="log">
 		<div class="row">
 			<div class="col-12">
@@ -36,8 +42,8 @@
 					</div>
 					
 					<div class="col-12  ">
-						<label for="email" class="form-label">Email:</label>
-						<input type="email" id="email" name="email" class="form-input">
+						<label for="email" class="form-label">Contraseña:</label>
+						<input type="password" id="password" name="password" class="form-input">
 					</div>
 				
 					<div class="col-12">
@@ -54,35 +60,13 @@
 			</form>
 		</div>
 
-	</div>
+  </div>
+  
+<!-- ---------------FORMULARIO INICIO SESION------------------- -->
 
-	
-
+<!-- ------------FOOTER------------ -->
+<%- include('./partials/footer')  %> 
+<!-- ------------FOOTER------------- -->
 
 </body>
-
-<footer class="main-footer" id="mainfot">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-1 col-0" ></div>
-       
-        <div class="col-lg-3 col-6" >
-          <article class="footer-data" id="contacto">
-            <i class="fa fa-envelope-open" aria-hidden="true" id="sobre"></i>
-            <h2>Contacto</h2>
-            <p>Mail</p>	
-          </article>
-        </div>
-        
-        <div class="col-lg-3 col-5">
-          <article class="footer-data" >
-            <img src="/images/Logo-completo.png" id="fotofooter">  
-          </article>
-        </div>
-      
-        </div>
-      </div>
-    </div>
-    </footer>
-
 </html>

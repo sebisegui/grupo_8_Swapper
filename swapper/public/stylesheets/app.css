@@ -8,6 +8,17 @@
 
 #fotochat{ max-width:100%;}
 
+#loginform{
+  margin-bottom: 10%;
+  -webkit-box-shadow: 19px 10px 26px -8px rgba(15,2,15,1);
+  -moz-box-shadow: 19px 10px 26px -8px rgba(15,2,15,1);
+  box-shadow: 19px 10px 26px -8px rgba(15,2,15,1);
+}
+
+#create-user{
+  margin-bottom: 5%;
+}
+
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
   float: left;
@@ -147,10 +158,27 @@ margin-top: 300px;
   overflow-y: auto;
 }
 
+.row{
+  background-color: antiquewhite;
+}
 
+.row2{
+  background-color: #ef4a22;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
+.precioProduct{
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+}
 
-
+.col-12 button {
+  margin-top: 1.5%;
+}
 
 .btn-danger{
   margin-right: 0px;
@@ -171,9 +199,7 @@ margin-top: 300px;
   ;
 }
 
-#colswap{
-  padding-right: 0px;
-}
+#colswap
 .login-title{
   text-align: center
 }
@@ -189,8 +215,6 @@ margin-top: 300px;
   padding: 30px;
 }
 
-
-
 #mainfot{
   margin-top: 0px;
 }
@@ -202,8 +226,12 @@ margin-top: 300px;
 
 }
 
+.status {
+  margin-right: 1.5%;
+  margin-left: 1.5%;
+}
 .main-footer{
-background-color: #ef4a22;
+background-color:#ef4a22;
 opacity: 80%;
 width:100%
 /*display: flex;

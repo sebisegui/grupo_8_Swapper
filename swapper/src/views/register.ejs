@@ -15,18 +15,23 @@
 
 </head>
 <body class="fondo">
+
+<!-- ------------HEADER------------- -->	
     <header>
         <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
             <img src="/images/Logo.png">
     </header>
-    
+<!-- ------------HEADER------------- -->
+	
+<!-- ------------FORMULARIO CARGA USUARIO------------- -->
+
     <div class="container-fluid products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Crea tu usuario!</h2>
 			</div>
         </div>
-        <div class="col-12 formulario">
+        <div class="col-12 formulario" id='create-user'>
 			<form action="/product/create" method="POST">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6 ">
@@ -54,40 +59,17 @@
 						<input type="password" name="password2" id="password2" class="form-input">
 					</div>
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Crear usuario</button>
+						<button type="submit" class="btn btn-success">Crear usuario</button>
 					</div>
 				</div>
 			</form>
 		</div>
-
 	</div>
 
-	
+<!-- ------------FORMULARIO CARGA USUARIO------------- -->
 
-
+<!-- ------------FOOTER------------ -->
+<%- include('./partials/footer')  %> 
+<!-- ------------FOOTER------------- -->
 </body>
-
-<footer class="main-footer" id="mainfot">
-	<div class="container">
-		<div class="row">
-		  <div class="col-1" ></div>
-		 
-			<div class="col-5" id="mailfooter">
-				<article class="footer-data" >
-				  <i class="fa fa-envelope-open" aria-hidden="true"></i>
-					<h2>Contacto</h2>
-					<p>Mail</p>	
-				</article>
-			</div>
-			<div class="col-6">
-				<article class="footer-data" >
-					<img src="/images/Logo.png" id="fotofooter">  
-				</article>
-			</div>
-			
-			</div>
-		</div>
-	</div>
-  </footer>
-
 </html>

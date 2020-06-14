@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www -e js,ejs"
+    "start": "nodemon ./src/bin/www -e js,ejs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
@@ -13,6 +13,7 @@
     "express": "~4.16.1",
     "fs": "0.0.1-security",
     "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.1"
   }
 }
