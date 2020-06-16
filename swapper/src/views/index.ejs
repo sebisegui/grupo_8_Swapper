@@ -15,8 +15,51 @@
 
             <!-- --------------------COLUMNA MATCHES--------------------- -->
       <div class="col-lg-3 col-4 col-md-3" id="colswap">
-
         <h1 class="my-4">Swap</h1>
+          <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+            <% for(let i=7;i<10;i++) {%> 
+            <div class="col-12 col-lg-6" id="matches" >
+              
+              <section class="product-box">
+                <a href='' >
+                  <figure class="product-box_image">
+                    <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
+                  </figure>
+                  <article class="product-box_data">
+                    <p><%= listaProductosJS[i].nombre %></p>
+                  </article>
+                </a>
+              </section>
+              
+            </div>
+            <% }%> 
+          </div>
+        </div>
+      
+        <!--
+            <% for(let i=0;i<6;i++) {%> 
+            <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
+              <div class="card h-100">
+                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#"><%= listaProductosJS[i].nombre %></a>
+                  </h4>
+                  <p class="card-text">Donde se encuentra: <%= listaProductosJS[i].zona %></p>
+                  <div class="botones">
+                    <a class="btn btn-outline-danger" href="#">
+                      <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
+                    <a class="btn btn-outline-success" href="#">
+                      <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Estado del producto: &#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div> 
+            </div>
+            <% }%> 
+
         <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
           <div class="col-12 col-lg-6" id="matches" >
             <section class="product-box">
@@ -121,7 +164,7 @@
                   <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
                 </figure>
                 <article class="product-box_data">
-                  <p>descripcion</p>
+                  <p>Titulo</p>
                 </article>
               </a>
             </section>
@@ -138,16 +181,39 @@
               </a>
             </section>
           </div>
-        </div>
-      </div>
+          -->
+       
             <!-- --------------------COLUMNA MATCHES--------------------- -->
 
             <!-- -------------------PRODUCTOS--------------------- -->
+      
       <div class="col-lg-9 col-8 col-md-9" id="colProduct">
         <h1 class="my-4">Nuestros productos</h1>
 
         <div class="row">
-          <% listaProductosJS.forEach(producto =>{ %>
+          <% for(let i=0;i<6;i++) {%> 
+            <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
+              <div class="card h-100">
+                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#"><%= listaProductosJS[i].nombre %></a>
+                  </h4>
+                  <p class="card-text">Donde se encuentra: <%= listaProductosJS[i].zona %></p>
+                  <div class="botones">
+                    <a class="btn btn-outline-danger" href="#">
+                      <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
+                    <a class="btn btn-outline-success" href="#">
+                      <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Estado del producto: &#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                </div>
+              </div> 
+            </div>
+            <% }%> 
+         <!-- <% listaProductosJS.forEach(producto =>{ %>
           <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
             <div class="card h-100">
               <a href="/products/<%=producto.id%>"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-productos"></a>
@@ -168,7 +234,7 @@
               </div>
             </div> 
           </div>
-          <% }) %> 
+          <% }) %> -->
       </div>
              <!-- -------------------PRODUCTOS--------------------- -->
     </div>

@@ -21,7 +21,7 @@ const userController ={
         res.render('login')
     },
     index: (req, res) =>{
-        res.render('index', {listaProductosJS})
+        res.render('index', {listaProductosJS});
     },
     detalleProduct: (req,res) =>{
         let producto = listaProductosJS.find(producto => producto.id == req.params.id)
