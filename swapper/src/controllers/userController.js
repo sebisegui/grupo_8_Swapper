@@ -25,7 +25,7 @@ const userController ={
     },
     detalleProduct: (req,res) =>{
         let producto = listaProductosJS.find(producto => producto.id == req.params.id)
-        res.render('detalle', {producto: producto})
+        res.render('detalle', {producto: producto,listaProductosJS})
     },
     cargaProduct: (req, res) =>{
         res.render('formulario-carga')

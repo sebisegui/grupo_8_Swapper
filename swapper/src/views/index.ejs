@@ -14,7 +14,7 @@
     <div class="row general">
 
             <!-- --------------------COLUMNA MATCHES--------------------- -->
-      <div class="col-lg-3 col-4 col-md-3" id="colswap">
+      <div class="col-lg-3 col-4 col-md-3" id="colswap" style="height: auto;">
         <h1 class="my-4">Swap</h1>
           <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
             <% for(let i=7;i<10;i++) {%> 
@@ -194,7 +194,9 @@
           <% for(let i=0;i<6;i++) {%> 
             <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
               <div class="card h-100">
-                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos"></a>
+                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos">
+                  
+                </a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#"><%= listaProductosJS[i].nombre %></a>
