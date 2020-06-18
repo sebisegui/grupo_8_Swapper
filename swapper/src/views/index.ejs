@@ -42,9 +42,9 @@
 
                 <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
                   <% for(let i=7;i<10;i++) {%> 
-                  <div class="col-12 col-lg-6" id="matches" >
+                  <div class="col-12 col-lg-12" id="matches" >
                     
-                    <section class="product-box">
+                   <!-- <section class="product-box">
                       <a href='' >
                         <figure class="product-box_image">
                           <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
@@ -53,11 +53,24 @@
                           <p><%= listaProductosJS[i].nombre %></p>
                         </article>
                       </a>
-                    </section>
+                    </section>-->
                     
+                    <div class="col-lg-12 col-12" style="">
+                      <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                        <div class="hover-overlay"></div>
+                        <div class="hover-5-content">
+                          <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
+                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0"><strong class="font-weight-bold text-white"></strong><span>Sebastian</span><br><span>1534967520</span></h3>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                   <% }%> 
                 </div>
+
+                
+
             </div>
           
             </li>
@@ -71,8 +84,30 @@
                   <% for(let i=10;i<11;i++) {%> 
 
                   <div class="col-12 col-lg-12" id="matches" >
+                    <div class="col-lg-12 col-12" style="">
+                      <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                        <div class="hover-overlay"></div>
+                        <div class="hover-5-content">
+                          <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
+                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0" >
+                            
+                            <div class="col-lg-12"  style="margin-left: 0px;margin-bottom: 0px;">
                     
-                    <section class="product-box">
+                            <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
+                              <button type="button" class="btn btn-secondary btn-sm">Editar</button>
+                            </form>
+                        
+                          
+                              <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                              </form>
+                          
+                        </div></h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!--<section class="product-box">
                       <div class="col-12 " style="margin-right:0px; margin-left: 0px;padding: 0px;">
                       <a href='' >
                         <figure class="product-box_image">
@@ -95,7 +130,7 @@
                         </form>
                     
                   </div>
-                    </section>
+                    </section>-->
                   
               
                   </div>

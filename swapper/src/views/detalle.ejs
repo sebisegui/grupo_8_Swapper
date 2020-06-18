@@ -12,8 +12,63 @@
             <div class="row">
 
               <!-- --------------------COLUMNA MATCHES--------------------- -->
-              <div class="col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap">
-                <h1 class="my-4">Swap</h1>
+              <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
+
+                <div class="slider" style="width: auto; height: 1000px;">
+        
+                
+                
+                  <ul class="slides">
+        
+                    
+                    
+                      
+                      <div>
+                        <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                        <h2>Swapp</h2>
+                      </div>
+        
+                        <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+                          <% for(let i=7;i<10;i++) {%> 
+                          <div class="col-12 col-lg-12" id="matches" >
+                            
+                           <!-- <section class="product-box">
+                              <a href='' >
+                                <figure class="product-box_image">
+                                  <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
+                                </figure>
+                                <article class="product-box_data">
+                                  <p><%= listaProductosJS[i].nombre %></p>
+                                </article>
+                              </a>
+                            </section>-->
+                            
+                            <div class="col-lg-12 col-12" style="">
+                              <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                                <div class="hover-overlay"></div>
+                                <div class="hover-5-content">
+                                  <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
+                                  <h3 class="hover-5-title text-uppercase font-weight-light mb-0"><strong class="font-weight-bold text-white"></strong><span>Sebastian</span><br><span>1534967520</span></h3>
+                                </div>
+                              </div>
+                            </div>
+        
+                          </div>
+                          <% }%> 
+                        </div>
+        
+                        
+        
+                    </div>
+                  
+                  </ul>
+                </div>
+                  
+                   
+                    
+                  
+                
+                <!--<h1 class="my-4">Swap</h1>
                   <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
                     <% for(let i=7;i<10;i++) {%> 
                     <div class="col-12 col-lg-6" id="matches" >
@@ -24,14 +79,14 @@
                             <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
                           </figure>
                           <article class="product-box_data">
-                            <p><%=listaProductosJS[i].nombre %></p>
+                            <p><%= listaProductosJS[i].nombre %></p>
                           </article>
                         </a>
                       </section>
                       
                     </div>
                     <% }%> 
-                  </div>
+                  </div>-->
                 </div>
               <!-- <div class="col-lg-3 col-4 col-md-3" id="colswap">
         
@@ -233,7 +288,7 @@
                         <h5 class="card-title" style="text-align: center;"><%= producto.categoria %></h5>
                       </div>
                     </div>
-                    <div class="card border-light mb-3" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
+                    <div class="card border-light mb-3 " style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
                       <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Zona</div>
                       <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;">
                         <h5 class="card-title" style="text-align: center;"><%= producto.zona %></h5>
@@ -247,10 +302,10 @@
                     </div>
                   </div>
                   <div class="card-deck">
-                    <div class="card border-light mb-3" style="max-height: auto;margin: 30px; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;">
+                    <div class="card border-light mb-3" style="height:auto;margin: 30px; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;">
                       <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Descripcion</div>
-                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;">
-                        <h5 class="card-title" style="text-align: center;margin-top: 20px;margin-bottom: 50px;"><%= producto.descripcion %></h5>
+                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;height: 300px;padding-top: 10px;;">
+                        <h5 class="card-title" style="text-align: center;margin-top: 0px;padding: 20px;"><%= producto.descripcion %></h5>
                       </div>
                     </div>
                     
