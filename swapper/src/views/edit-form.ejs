@@ -11,9 +11,9 @@
     
 <!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
 
-    <div class="container-fluid products-wrapper">
+    <div class="container-fluid products-wrapper"style="margin-bottom: 150px;">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12"style="text-align: center;margin-bottom: 30px;">
 				<h2 class="products-title">Editando Producto</h2>
 			</div>
         </div>
@@ -43,15 +43,24 @@
           </div>
           
 					<div class="col-12 col-md-6 ">
-            <label for="imagen">Foto del producto</label>
-            <input type="file" class="form-control-file" id="imagen" name="imagen">
+            <label for="descripcion">Cargar Fotos</label>
+            <form>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Fotos</label>
+              </div>
+            </form>
           </div>
 
           <div class="status">
           <label for="estado">Estado</label>
               <select class="form-control" id="estado" name="imagen">
-                <option value="nuevo">Nuevo</option>
-                <option value="usado">Usado</option>
+                <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
+                <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
+                <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
+                <option value="usado">&#9733; &#9733; &#9733; &#9733; &#9734</option>
+                <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
+                
               </select>
             </div>
             
@@ -65,7 +74,7 @@
                 <input id="zona" name="zona" type="text" class="form-control" placeholder="<%=producto.zona%>">
           </div>
 					<div class="col-12">
-						<button type="submit" class="buy-now-button">Editar producto</button>
+						<button type="submit" class="btn btn-outline-secondary">Editar producto</button>
 					</div>
 				</div>
 			</form>
