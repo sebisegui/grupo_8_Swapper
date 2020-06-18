@@ -14,8 +14,103 @@
     <div class="row general">
 
             <!-- --------------------COLUMNA MATCHES--------------------- -->
-      <div class="col-lg-3 col-4 col-md-3" id="colswap" style="height: auto;">
-        <h1 class="my-4">Swap</h1>
+      <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
+
+        <div class="slider" style="width: auto; height: 1000px;">
+
+          <input type="radio" name="toggle" id="btn-1" checked>
+          <input type="radio" name="toggle" id="btn-2">
+          
+        
+          <div class="slider-controls">
+            
+            <label for="btn-1"></label>
+            
+            <label for="btn-2"></label>
+            
+          </div>
+        
+          <ul class="slides">
+
+            
+            <li class="slide">
+              
+              <div>
+                <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                <h2>Swapp</h2>
+              </div>
+
+                <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+                  <% for(let i=7;i<10;i++) {%> 
+                  <div class="col-12 col-lg-6" id="matches" >
+                    
+                    <section class="product-box">
+                      <a href='' >
+                        <figure class="product-box_image">
+                          <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
+                        </figure>
+                        <article class="product-box_data">
+                          <p><%= listaProductosJS[i].nombre %></p>
+                        </article>
+                      </a>
+                    </section>
+                    
+                  </div>
+                  <% }%> 
+                </div>
+            </div>
+          
+            </li>
+            <li class="slide">
+              <div>
+                <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                 <h2>Mis productos</h2>
+                </div>
+                <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+
+                  <% for(let i=10;i<11;i++) {%> 
+
+                  <div class="col-12 col-lg-12" id="matches" >
+                    
+                    <section class="product-box">
+                      <div class="col-12 " style="margin-right:0px; margin-left: 0px;padding: 0px;">
+                      <a href='' >
+                        <figure class="product-box_image">
+                          <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
+                        </figure>
+                        <article class="product-box_data">
+                          <p><%= listaProductosJS[i].nombre %></p>
+                        </article>
+                      </a>
+                    </div>
+                    <div class="col-lg-12"  style="margin-left: 20px;margin-bottom: 10px;">
+                    
+                      <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
+                        <button type="button" class="btn">Editar</button>
+                      </form>
+                  
+                    
+                        <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
+                          <button type="button" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    
+                  </div>
+                    </section>
+                  
+              
+                  </div>
+                    
+                
+                  <% }%> 
+                </div>
+            </div>
+          
+            </li>
+            
+            </li>
+          </ul>
+        </div>
+        <!--<h1 class="my-4">Swap</h1>
           <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
             <% for(let i=7;i<10;i++) {%> 
             <div class="col-12 col-lg-6" id="matches" >
@@ -33,7 +128,7 @@
               
             </div>
             <% }%> 
-          </div>
+          </div>-->
         </div>
       
         <!--
@@ -187,10 +282,10 @@
 
             <!-- -------------------PRODUCTOS--------------------- -->
       
-      <div class="col-lg-9 col-8 col-md-9" id="colProduct">
-        <h1 class="my-4">Nuestros productos</h1>
+      <div class="col-lg-9 col-12 col-md-12 " id="colProduct">
+        <!--<h1 class="my-4">Nuestros productos</h1>-->
 
-        <div class="row">
+        <div class="row" style="margin-top: 40px;">
           <% for(let i=0;i<6;i++) {%> 
             <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
               <div class="card h-100">
