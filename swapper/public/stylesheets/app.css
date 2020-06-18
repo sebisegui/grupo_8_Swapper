@@ -1,6 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+#butnok{
+  color:grey;
+  background-color: rgba(255, 0, 0, 0.274);
+  opacity: 70%;
+  border-color: white;
+  width: 100%
+  }
+
+    #butnok:hover{
+    background-color: red;
+    color: white;
+    }
+    #butnok:focus{
+    background-color: red;
+    width: 500%;
+    border-radius: 10px; 
+    
+    transition: 0.5s;
+    }
+
+
+#butok{
+  color:grey;
+  background-color: rgba(0, 128, 0, 0.274);
+  opacity: 70%;
+  border-color: white;
+  width: 100%
+  
+  }
+
+    #butok:hover{
+    background-color: green;
+    color: white;
+    }
+    #butok:focus{
+    background-color: green;
+    width: 500%;
+    border-radius: 10px; 
+    
+    transition: 0.5s;
+    }
+
 .hover {
   overflow: hidden;
   position: relative;
