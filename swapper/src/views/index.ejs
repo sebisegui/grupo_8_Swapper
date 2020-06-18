@@ -93,13 +93,13 @@
                             
                             <div class="col-lg-12"  style="margin-left: 0px;margin-bottom: 0px;">
                     
-                            <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
-                              <button type="button" class="btn btn-secondary btn-sm">Editar</button>
-                            </form>
+                              <a href='/products/edit/<%=listaProductosJS[i].id%>' class='editar'>
+                              <button type="submit" class="btn btn-secondary btn-sm">Editar</button>
+                            </a>
                         
                           
                               <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
-                                <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                               </form>
                           
                         </div></h3>
