@@ -1,6 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
+
+.custom-scrollbar-js,
+.custom-scrollbar-css {
+  height: 200px;
+}
+
+
+/* Custom Scrollbar using CSS */
+.custom-scrollbar-css {
+  overflow-y: scroll;
+}
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #ef4a22;
+  background-image: linear-gradient(to top, #ec9680 0%, #ef4a22 100%);
+}
+
 #butnok{
   color:grey;
   background-color: rgba(255, 0, 0, 0.274);
@@ -189,16 +218,16 @@ html {
 }
 
 #btn-1:checked ~ .slider-controls label[for="btn-1"] {
-  background-color: #ff4081;
+  background-color: #ef4a22;
   
 }
 
 #btn-2:checked ~ .slider-controls label[for="btn-2"] {
-  background-color: #ff4081;
+  background-color: #ef4a22;
 }
 
 #btn-3:checked ~ .slider-controls label[for="btn-3"] {
-  background-color: #ff4081;
+  background-color: #ef4a22;
 }
 
 /* SLIDES */

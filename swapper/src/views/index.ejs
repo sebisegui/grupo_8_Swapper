@@ -16,7 +16,7 @@
             <!-- --------------------COLUMNA MATCHES--------------------- -->
       <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
 
-        <div class="slider" style="width: auto; height: 1000px;">
+        <div class="slider slider overflow-auto custom-scrollbar-css p-2  " style="width: auto; height: 1200px;">
 
           <input type="radio" name="toggle" id="btn-1" checked>
           <input type="radio" name="toggle" id="btn-2">
@@ -41,7 +41,7 @@
               </div>
 
                 <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-                  <% for(let i=7;i<10;i++) {%> 
+                  <% for(let i=7;i<13;i++) {%> 
                   <div class="col-12 col-lg-12" id="matches" >
                     
                    <!-- <section class="product-box">
@@ -56,11 +56,18 @@
                     </section>-->
                     
                     <div class="col-lg-12 col-12" style="">
-                      <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                      <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;"></a>
                         <div class="hover-overlay"></div>
                         <div class="hover-5-content">
                           <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
-                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0"><strong class="font-weight-bold text-white"></strong><span>Sebastian</span><br><span>1534967520</span></h3>
+                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0">
+                            <strong class="font-weight-bold text-white"></strong>
+                            <span>Sebastian</span>
+                            <br>
+                            <span>1534967520</span>
+                            <a href="/products/<%=listaProductosJS[i].id%>">
+                              <i class="fa fa-info" aria-hidden="true" style="color:#ef4a22;"></i> <br></a>
+                          </h3>
                         </div>
                       </div>
                     </div>
@@ -81,7 +88,7 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
 
-                  <% for(let i=10;i<11;i++) {%> 
+                  <% for(let i=13;i<15;i++) {%> 
 
                   <div class="col-12 col-lg-12" id="matches" >
                     <div class="col-lg-12 col-12" style="">
