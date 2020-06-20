@@ -66,11 +66,14 @@ const userController ={
     },
 
     delete: (req,res) => { 
-        let deleteId = req.params.id
-        let newDataBase = listaProductosJS.filter(product => product.id != deleteId)
-        let newDataBaseJS = JSON.stringify(newDataBase, null, " ");
-        fs.writeFileSync(productsPath, newDataBaseJS);
-        res.redirect('/products/')
+        let deleteId = req.params.id;
+        listaProductosJS.forEach(producto => {
+            if(deleteId == producto.id){
+                let posicionProducto = listaProductosJS.indexOf(producto);
+                listaProductosJS.splice(posicionProducto,1)
+            }});
+            fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
+            res.redirect('/products/')
     },
     register: (req,res) =>{
         res.render('register')

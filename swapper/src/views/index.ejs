@@ -77,7 +77,7 @@
 
                   <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
 
-                   <% for(let i=13;i<15;i++) {%> 
+                   <% for(let i=12;i<14;i++) {%> 
 
                    <div class="col-12 col-lg-12" id="matches" >
                     <div class="col-lg-12 col-12" style="">
@@ -93,7 +93,7 @@
                              </a>
                         
                           
-                              <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
+                              <form action="/products/<%= listaProductosJS[i].id %>?_method=DELETE" method="POST" style="display: inline-flex">
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                               </form>
                           
