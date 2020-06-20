@@ -212,9 +212,9 @@ select[type=categoria]:focus {
   border-bottom: 2px solid #ef4a22;
 }
 
-select[type=categoria]:placeholder {
+/*select[type=categoria]:placeholder {
   color: #cccccc;
-}
+}*/
 
 textarea[type=text] {
   background-color: #f6f6f6;

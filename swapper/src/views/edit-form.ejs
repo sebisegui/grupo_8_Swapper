@@ -32,9 +32,11 @@
 	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST">
       <label for="nombre">Nombre del producto</label><br>
       <input type="text" class="form-control" id="nombre" name="nombre" value="<%=producto.nombre%>">
+
             
             <label for="categoria">Categoria</label><br>
-            <select type="categoria" class="form-control" id="nombre" name="categoria" value="<%=producto.categoria%>">
+            <select id="cars" type="categoria">
+              <option value="" disabled selected hidden><%=producto.categoria%></option>
               <option >Electronica</option>
               <option >Moda</option>
               <option >Hogar</option>
@@ -45,20 +47,20 @@
             
 
             <label for="estado">Estado</label><br>
-              <select type="categoria" class="form-control" id="estado" name="imagen">
+              <select type="categoria" >
                 <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
                 <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
-                <option value="usado">&#9733; &#9733; &#9733; &#9733; &#9734</option>
+                <option value="" disabled selected hidden>&#9733; &#9733; &#9733; &#9733; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
                 
               </select>
 
               <label for="precio">Precio del producto</label><br>
-                <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button" value="<%=producto.precio%>">
+                <input id="precio" name="precio" type="text" value="<%=producto.precio%>">
 
             <label for="descripcion">Descripcion del producto</label><br>
-            <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="8" value="<%=producto.descripcion%>"></textarea><br>
+            <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="8"><%=producto.descripcion%></textarea><br>
 
             <label for="zona">Zona</label><br>
                 <input id="zona" name="zona" type="text" class="form-control" value="<%=producto.zona%>">
