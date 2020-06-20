@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 	<%- include('./partials/head')  %>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body class="fondo">
 
 <!-- ---------------HEADER------------------- -->
-    <header>
-        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark "style="background-color: #ef4a22;">
-            <img src="/images/Logo.png">
-    </header>
 
 <!-- ---------------HEADER------------------- -->  
 
 <!-- ---------------FORMULARIO INICIO SESION------------------- -->
-
-    <div class="col-lg-6 container-fluid products-wrapper" >
-		<div class="row">
-			<div class="col-12 " id="log2" style="background-color: white;border-radius: 20px;padding: 10px;margin-bottom: 10px;">
-				<h2 style="text-align: center;">Log in</h2>
-			</div>
-        </div>
-        <div class="col-12 formulario" id="loginform">
-			<form action="/product/create" method="POST">
-				<div class="row product-detail" id="log2">
-					
-					<div class="col-12 ">
-						<label for="username" class="form-label">Nombre de usuario:</label>
-						<input type="text" id="username" name="username" class="form-input">
-					</div>
-					
-					<div class="col-12  ">
-						<label for="email" class="form-label">Contraseña:</label>
-						<input type="password" id="password" name="password" class="form-input">
-					</div>
-				
-					<div class="col-12">
-						<div class="d-flex">
-						<div class="p-2 ">
-						<button type="submit" class="btn btn-outline-primary">Log in</button>
-						</div>
-						<div class="p-2 ml-auto">
-						<button type="submit" class="btn btn-outline-secondary" id="crearuser">Crear usuario</button>
-					</div>
-				</div>
-					</div>
-				</div>
-			</form>
-		</div>
+<div class="wrapper fadeInDown">
+	
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+  
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<img src="/images/logo-gif.gif" id="icon" alt="User Icon" >
+	  </div>
+  
+	  <!-- Login Form -->
+	  <form>
+		<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+		<input type="text" id="password" class="fadeIn second" name="login" placeholder="password">
+		<input type="submit" class="fadeIn second" value="Log In">
+	  </form>
+  
+	  <!-- Remind Passowrd -->
+	  <div id="formFooter">
+		<a class="underlineHover" href="#" style="color: grey;">Forgot Password?</a>
+		<br>
+		<a class="underlineHover" href="/register" style="color: grey;">Create User</a>
+	  </div>
+  
+	</div>
 
   </div>
-  
+
+
 <!-- ---------------FORMULARIO INICIO SESION------------------- -->
 
 <!-- ------------FOOTER------------ -->
-<%- include('./partials/footer')  %> 
+
 <!-- ------------FOOTER------------- -->
 
 </body>

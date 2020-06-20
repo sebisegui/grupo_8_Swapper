@@ -9,52 +9,42 @@
 
 <!-- ------------LISTA DE PRODUCTOS------------- -->
 
-  <div class="container2" >
+  
 
-    <div class="row general">
+<div class="row general">
 
             <!-- --------------------COLUMNA MATCHES--------------------- -->
-      <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
 
-        <div class="slider slider overflow-auto custom-scrollbar-css p-2  " style="width: auto; height: 1200px;">
+  <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
 
-          <input type="radio" name="toggle" id="btn-1" checked>
-          <input type="radio" name="toggle" id="btn-2">
+    <div class="slider slider overflow-auto custom-scrollbar-css p-2  " style="width: auto; height: 1405px;">
+
+      <input type="radio" name="toggle" id="btn-1" checked>
+      <input type="radio" name="toggle" id="btn-2">
           
-        
-          <div class="slider-controls">
+        <div class="slider-controls" style="height: 60px;">
             
             <label for="btn-1"></label>
             
             <label for="btn-2"></label>
             
-          </div>
+        </div>
         
           <ul class="slides">
 
-            
             <li class="slide">
               
               <div>
                 <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
-                <h2>Swapp</h2>
-              </div>
+
+                <h2 style="height:30px; margin: 30px;margin-top: 50px;">Swapp</h2>
+                </div>
 
                 <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+
                   <% for(let i=7;i<13;i++) {%> 
-                  <div class="col-12 col-lg-12" id="matches" >
-                    
-                   <!-- <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p><%= listaProductosJS[i].nombre %></p>
-                        </article>
-                      </a>
-                    </section>-->
-                    
+
+                  <div class="col-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
                     <div class="col-lg-12 col-12" style="">
                       <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;"></a>
                         <div class="hover-overlay"></div>
@@ -66,273 +56,72 @@
                             <br>
                             <span>1534967520</span>
                             <a href="/products/<%=listaProductosJS[i].id%>">
-                              <i class="fa fa-info" aria-hidden="true" style="color:#ef4a22;"></i> <br></a>
+                            <i class="fa fa-info" aria-hidden="true" style="color:#ef4a22;"></i> <br></a>
                           </h3>
                         </div>
                       </div>
                     </div>
-
                   </div>
                   <% }%> 
                 </div>
-
-                
-
-            </div>
+               
+              </div>
           
             </li>
-            <li class="slide">
+
+             <li class="slide">
               <div>
-                <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
-                 <h2>Mis productos</h2>
-                </div>
-                <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+                 <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                  <h2 style="height:30px; margin: 30px;margin-top: 50px;">Mis productos</h2>
+                 </div>
 
-                  <% for(let i=13;i<15;i++) {%> 
+                  <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
 
-                  <div class="col-12 col-lg-12" id="matches" >
+                   <% for(let i=13;i<15;i++) {%> 
+
+                   <div class="col-12 col-lg-12" id="matches" >
                     <div class="col-lg-12 col-12" style="">
                       <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
                         <div class="hover-overlay"></div>
                         <div class="hover-5-content">
                           <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
-                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0" >
-                            
+                          <h3 class="hover-5-title text-uppercase font-weight-light mb-0" >                           
                             <div class="col-lg-12"  style="margin-left: 0px;margin-bottom: 0px;">
                     
                               <a href='/products/edit/<%=listaProductosJS[i].id%>' class='editar'>
                               <button type="submit" class="btn btn-secondary btn-sm">Editar</button>
-                            </a>
+                             </a>
                         
                           
                               <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                               </form>
                           
-                        </div></h3>
+                            </div> 
+                          </h3>
                         </div>
                       </div>
-                    </div>
-
-                    <!--<section class="product-box">
-                      <div class="col-12 " style="margin-right:0px; margin-left: 0px;padding: 0px;">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p><%= listaProductosJS[i].nombre %></p>
-                        </article>
-                      </a>
-                    </div>
-                    <div class="col-lg-12"  style="margin-left: 20px;margin-bottom: 10px;">
-                    
-                      <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
-                        <button type="button" class="btn">Editar</button>
-                      </form>
-                  
-                    
-                        <form action="/products/<%= listaProductosJS[i] %>?_method=DELETE" method="POST" style="display: inline-flex">
-                          <button type="button" class="btn btn-danger">Eliminar</button>
-                        </form>
-                    
+                    </div>                                       
+                   </div>                                  
+                    <% }%> 
                   </div>
-                    </section>-->
-                  
-              
-                  </div>
-                    
-                
-                  <% }%> 
-                </div>
-            </div>
-          
-            </li>
-            
-            </li>
+              </div>         
+             </li>                       
           </ul>
-        </div>
-        <!--<h1 class="my-4">Swap</h1>
-          <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-            <% for(let i=7;i<10;i++) {%> 
-            <div class="col-12 col-lg-6" id="matches" >
-              
-              <section class="product-box">
-                <a href='' >
-                  <figure class="product-box_image">
-                    <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
-                  </figure>
-                  <article class="product-box_data">
-                    <p><%= listaProductosJS[i].nombre %></p>
-                  </article>
-                </a>
-              </section>
-              
-            </div>
-            <% }%> 
-          </div>-->
-        </div>
-      
-        <!--
-            <% for(let i=0;i<6;i++) {%> 
-            <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
-              <div class="card h-100">
-                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos"></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#"><%= listaProductosJS[i].nombre %></a>
-                  </h4>
-                  <p class="card-text">Donde se encuentra: <%= listaProductosJS[i].zona %></p>
-                  <div class="botones">
-                    <a class="btn btn-outline-danger" href="#">
-                      <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
-                    <a class="btn btn-outline-success" href="#">
-                      <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
-                    </div>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">Estado del producto: &#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div> 
-            </div>
-            <% }%> 
-
-        <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-          <div class="col-12 col-lg-6" id="matches" >
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>Descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>Titulo</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6" id=matches>
-            <section class="product-box">
-              <a href='' >
-                <figure class="product-box_image">
-                  <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                </figure>
-                <article class="product-box_data">
-                  <p>descripcion</p>
-                </article>
-              </a>
-            </section>
-          </div>
-          -->
-       
+    </div>
+        
+  </div>           
             <!-- --------------------COLUMNA MATCHES--------------------- -->
 
             <!-- -------------------PRODUCTOS--------------------- -->
       
-      <div class="col-lg-9 col-12 col-md-12 " id="colProduct">
-        <!--<h1 class="my-4">Nuestros productos</h1>-->
-
-        <div class="row" style="margin-top: 40px;">
+  <div class="col-lg-9 col-12 col-md-12 " id="colProduct" >
+        
+    <div class="row" style="margin-top: 40px;">
           <% for(let i=0;i<6;i++) {%> 
-            <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
-              <div class="card h-100">
-                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos">
-                  
+            <div class="col-12 col-md-6 col-lg-4 contenedor-producto" style=";">
+              <div class="card h-100" style="border-radius: 30px; box-shadow: black;">
+                <a href="/products/<%=listaProductosJS[i].id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos">                  
                 </a>
                 <div class="card-body">
                   <h4 class="card-title">
@@ -351,34 +140,11 @@
                 </div>
               </div> 
             </div>
-            <% }%> 
-         <!-- <% listaProductosJS.forEach(producto =>{ %>
-          <div class="col-12 col-md-6 col-lg-4 contenedor-producto">
-            <div class="card h-100">
-              <a href="/products/<%=producto.id%>"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-productos"></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"><%= producto.nombre %></a>
-                </h4>
-                <p class="card-text">Donde se encuentra: <%= producto.zona %></p>
-                <div class="botones">
-                  <a class="btn btn-outline-danger" href="#">
-                    <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
-                  <a class="btn btn-outline-success" href="#">
-                    <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
-                  </div>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Estado del producto: &#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div> 
-          </div>
-          <% }) %> -->
-      </div>
-             <!-- -------------------PRODUCTOS--------------------- -->
-    </div>
-
+            <% }%>         
+      </div>            
   </div>
+<!-- -------------------PRODUCTOS--------------------- -->
+</div>
   
 <!-- ------------LISTA DE PRODUCTOS------------- -->
 
@@ -390,6 +156,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 <!-- ------------JAVASCRIPT------------- -->
 
 </body>

@@ -10,51 +10,35 @@
 <!-- ------------HEADER------------- -->
     
 <!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
+<div class="wrapper fadeInDown">
+	
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+  
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<img src="/images/logo-nar.png" id="icon" alt="User Icon" >
+	  </div>
+  
+    <!-- Login Form -->
+    
+	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST">
+      <label for="nombre">Nombre del producto</label><br>
+      <input type="text" class="form-control" id="nombre" name="nombre" value="<%=producto.nombre%>">
+            
+            <label for="categoria">Categoria</label><br>
+            <select type="categoria" class="form-control" id="nombre" name="categoria" value="<%=producto.categoria%>">
+              <option >Electronica</option>
+              <option >Moda</option>
+              <option >Hogar</option>
+              <option >Inmuebles</option>
+              <option >Bazar</option>
+            </select><br>
 
-    <div class="container-fluid products-wrapper"style="margin-bottom: 150px;">
-		<div class="row">
-			<div class="col-12"style="text-align: center;margin-bottom: 30px;">
-				<h2 class="products-title">Editando Producto</h2>
-			</div>
-        </div>
-        <div class="col-12 formulario">
-			<form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST">
-				<div class="row product-detail">
+            
 
-					<div class="col-12 col-md-6 ">
-						<label for="nombre">Nombre del producto</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="<%=producto.nombre%>">
-                    </div>
-
-          <div class="col-12 col-md-6 ">
-						<label for="categoria">Categoria</label>
-              <select  class="form-control" id="categoria" name="categoria" placeholder="<%=producto.categoria%>">
-                <option >Electronica</option>
-                <option >Moda</option>
-                <option >Hogar</option>
-                <option >Inmuebles</option>
-                <option >Bazar</option>
-              </select>
-					</div>
-				
-					<div class="col-12 col-md-6 ">
-						<label for="descripcion">Descripcion del producto</label>
-              <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="<%=producto.descripcion%>"></textarea>
-          </div>
-          
-					<div class="col-12 col-md-6 ">
-            <label for="descripcion">Cargar Fotos</label>
-            <form>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Fotos</label>
-              </div>
-            </form>
-          </div>
-
-          <div class="status">
-          <label for="estado">Estado</label>
-              <select class="form-control" id="estado" name="imagen">
+            <label for="estado">Estado</label><br>
+              <select type="categoria" class="form-control" id="estado" name="imagen">
                 <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
                 <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
@@ -62,24 +46,36 @@
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
                 
               </select>
-            </div>
-            
-          <div class="precioProduct">
-            <label for="precio">Precio del producto</label>
-                <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="<%=producto.precio%>">
-          </div>
 
-          <div class="col-12 col-md-2 ">
-            <label for="zona">Zona</label>
-                <input id="zona" name="zona" type="text" class="form-control" placeholder="<%=producto.zona%>">
-          </div>
-					<div class="col-12">
-						<button type="submit" class="btn btn-outline-secondary">Editar producto</button>
-					</div>
-				</div>
-			</form>
-		</div>
+              <label for="precio">Precio del producto</label><br>
+                <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button" value="<%=producto.precio%>">
+
+            <label for="descripcion">Descripcion del producto</label><br>
+            <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="8" value="<%=producto.descripcion%>"></textarea><br>
+
+            <label for="zona">Zona</label><br>
+                <input id="zona" name="zona" type="text" class="form-control" value="<%=producto.zona%>">
+
+                <label for="descripcion">Cargar Fotos</label>
+                <form>
+                  <div class="custom-file" style="width: 90%;">
+                    <input type="text" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Fotos</label>
+                  </div>
+                </form>
+		<br>
+		<br>
+
+    <button type="submit" class="buy-now-button">Edit</button>
+		<input type="submit" class="fadeIn second" value="Editar">
+	  </form>
+  
+	  
+	</div>
+
   </div>
+
+    
 
 <!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
 

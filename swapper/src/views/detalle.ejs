@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head')  %>
+ <%- include('./partials/head')  %> 
 <body>
 
 <!-- ------------HEADER------------- -->
@@ -8,40 +8,29 @@
 <!-- ------------HEADER------------- -->
     
 <!-- ---------------CONTENEDOR PRODUCTOS------------------- -->
-<div class="container2" style="margin-bottom: 20%;">
+<div class="container2" style="margin-bottom: 5%;" >
             <div class="row">
 
               <!-- --------------------COLUMNA MATCHES--------------------- -->
-              <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;">
+              <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap">
 
-                <div class="slider overflow-auto custom-scrollbar-css p-2 " style="width: auto; height: 800px;">
+                <div class="slider overflow-auto custom-scrollbar-css p-2 " style="height: 800px;margin: 10px;margin-top: 20px;">
         
                 
                 
-                  <ul class="slides">
+                  <ul class="slides" >
         
-                    
-                    
+                  
                       
                       <div>
-                        <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                        <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;;">
                         <h2>Swapp</h2>
                       </div>
         
-                        <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+                        <div class="col-12 col-md-12 col-lg-12" id="Columna-matches" style=";">
                           <% for(let i=7;i<13;i++) {%> 
                           <div class="col-12 col-lg-12" id="matches" >
-                            
-                           <!-- <section class="product-box">
-                              <a href='' >
-                                <figure class="product-box_image">
-                                  <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
-                                </figure>
-                                <article class="product-box_data">
-                                  <p><%= listaProductosJS[i].nombre %></p>
-                                </article>
-                              </a>
-                            </section>-->
+                        
                             
                             <div class="col-lg-12 col-12" style="">
                               <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
@@ -70,157 +59,9 @@
                   
                   </ul>
                 </div>
-                  
-                   
-                    
-                  
                 
-                <!--<h1 class="my-4">Swap</h1>
-                  <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-                    <% for(let i=7;i<10;i++) {%> 
-                    <div class="col-12 col-lg-6" id="matches" >
-                      
-                      <section class="product-box">
-                        <a href='' >
-                          <figure class="product-box_image">
-                            <img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-matches">
-                          </figure>
-                          <article class="product-box_data">
-                            <p><%= listaProductosJS[i].nombre %></p>
-                          </article>
-                        </a>
-                      </section>
-                      
-                    </div>
-                    <% }%> 
-                  </div>-->
                 </div>
-              <!-- <div class="col-lg-3 col-4 col-md-3" id="colswap">
-        
-                <h1 class="my-4">Swap</h1>
-                <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-                  <div class="col-12 col-lg-6" id="matches" >
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>Descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                  <div class="col-12 col-lg-6" id=matches>
-                    <section class="product-box">
-                      <a href='' >
-                        <figure class="product-box_image">
-                          <img src="/images/logo-1.JPG" alt="imagen de producto" class= "foto-matches">
-                        </figure>
-                        <article class="product-box_data">
-                          <p>descripcion</p>
-                        </article>
-                      </a>
-                    </section>
-                  </div>
-                </div>
-              </div>-->
+            
       
            <!-- --------------------COLUMNA MATCHES--------------------- -->
               
@@ -229,7 +70,7 @@
               <div class="col-lg-9 col-12 col-md-12">
                 <h1 class="detallesProducto" style="text-align: center;"><%= producto.nombre %></h1>
                 <div class="row">
-                  <div class="col-lg-4 col-md-6 mb-4" style="align-content: center;">
+                  <div class="col-lg-4 col-md-5 col-12 mb-4" style="align-content: center;">
                   <div class="slider" style="">
                     <input type="radio" name="toggle" id="btn-1" checked>
                     <input type="radio" name="toggle" id="btn-2">
@@ -264,93 +105,37 @@
                     </ul>
                   </div>
                 </div>
-
-                   <!-- <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                          <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
-                        </div>  
-                      </div>
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                      <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
-                    </div>  
-                  </div>
-        
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                      <a href="#"><img src="/images/products/<%=producto.imagen%>" alt="imagen de producto" class= "foto-matches"></a>
-                    </div>  
-                  </div>
-                -->
-                
-                
-               <!--<div class="col-lg-1"></div>-->
-                
-                <div class="col-lg-7 col-md-6" id="description-card" style="">
-                  <div class="card-deck">
-                    <div class="card border-light mb-3" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;">
-                      <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Categoria</div>
-                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;">
+                <div class="col-lg-7 col-md-7 col-12" id="description-card" style="">
+                  <div class="card-deck" >
+                    <div class="card border-light mb-3" id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
+                      <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Categoria</div>
+                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
                         <h5 class="card-title" style="text-align: center;"><%= producto.categoria %></h5>
                       </div>
                     </div>
-                    <div class="card border-light mb-3 " style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
-                      <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Zona</div>
-                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;">
+                    <div class="card border-light mb-3 " id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
+                      <div class="card-header" style="background-color:white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Zona</div>
+                      <div class="card-body text-dark" style="background-color: rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
                         <h5 class="card-title" style="text-align: center;"><%= producto.zona %></h5>
                       </div>
                     </div>
-                    <div class="card border-light mb-3" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
-                      <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Precio</div>
-                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;">
+                    <div class="card border-light mb-3" id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
+                      <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Precio</div>
+                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
                         <h5 class="card-title" style="text-align: center;"><%= producto.precio %></h5>
                       </div>
                     </div>
                   </div>
-                  <div class="card-deck">
-                    <div class="card border-light mb-3" style="height:auto;margin: 30px; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;">
-                      <div class="card-header" style="background-color: rgb(204, 204, 204);border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Descripcion</div>
-                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0.192);border-bottom-right-radius: 40px;height: 300px;padding-top: 10px;;">
+                  <div class="card-deck" style="padding: 15px;">
+                    <div class="card border-light mb-3" id="carddesc2" style="height:fit-content; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
+                      <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Descripcion</div>
+                      <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;height: 300px;padding-top: 10px;;">
                         <h5 class="card-title" style="text-align: center;margin-top: 0px;padding: 20px;"><%= producto.descripcion %></h5>
                       </div>
                     </div>
                     
                   </div>
-                      <!--<p class= 'precio-original'>$<%=producto.precio%> </p>
-                        <li class="list-group-item1"><%= producto.nombre %></li>
-                        <li class="list-group-item1"><%= producto.categoria %></li>
-                        <li class="list-group-item1"><%= producto.descripcion %></li>
-                        <li class="list-group-item1"><%= producto.precio %></li>
-                        <li class="list-group-item1"><%= producto.zona %></li>  -->
-                    
-        <!--
-                  <div class="map col-3 col-md-6 col-lg-10">
-                    <iframe class="map2"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.1963973298784!2d-58.44561812146012!3d-34.548582433222876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb436efe09303%3A0xfb39818e7624ac76!2sDigital%20House!5e0!3m2!1ses-419!2sar!4v1590330910602!5m2!1ses-419!2sar" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                  </div>-->
-
-                  <!--<div class="card-deck">
-                    
-                    <div class="card border-light mb-3" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
-                      <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                        <button type="button" class="btn">Editar</button>
-                      </form>
-                  </div>
-                    <div class="card border-light mb-3" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;">
-                        <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                          <button type="button" class="btn btn-danger">Eliminar</button>
-                        </form>
-                    </div>
-                  </div>-->
-
-               <!-- <div class="botones-detalle" style="align-self: auto;">
-                  
-                  <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                  </form>
-                
-                </div>-->
-                  
+                     
               </div>      
               <div class="col-lg-4" style="margin-left: 0px;">
                 <div class="botones">

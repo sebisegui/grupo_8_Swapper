@@ -1,6 +1,10 @@
+
+<!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
 <!DOCTYPE html>
 <html lang="en">
+
   <%- include('./partials/head')  %>
+
 <body class="fondo">
 
 <!-- ------------HEADER------------- -->
@@ -8,54 +12,35 @@
 <!-- ------------HEADER------------- -->
     
 <!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
-
-    <div class="container-fluid products-wrapper" style="margin-bottom: 150px;">
-		<div class="row">
-			<div class="col-12" style="text-align: center;margin-bottom: 30px;">
-				<h2 class="products-title">Publica tu producto</h2>
-			</div>
-        </div>
-
-        <!--formulario-->
-        <div class="col-12 formulario">
-			<form action="/products/create" method="POST">
-				<div class="row product-detail">
-
-					<div class="col-12 col-md-6 ">
-						<label for="nombre">Nombre del producto</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto">
-                    </div>
-
-          <div class="col-12 col-md-6 ">
-						<label for="categoria">Categoria</label>
-              <select  class="form-control" id="categoria" name="categoria">
-                <option >Electronica</option>
-                <option >Moda</option>
-                <option >Hogar</option>
-                <option >Inmuebles</option>
-                <option >Bazar</option>
-              </select>
-					</div>
-				
-					<div class="col-12 col-md-6 ">
-						<label for="descripcion">Descripcion del producto</label>
-              <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
-          </div>
-          
-          <div class="col-12 col-md-6 " style="margin-top: 10px;">
-            <label for="descripcion">Cargar Fotos</label>
-            <form>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Fotos</label>
-              </div>
-            </form>
+<div class="wrapper fadeInDown">
+	
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+  
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<img src="/images/logo-nar.png" id="icon" alt="User Icon" >
+	  </div>
+  
+    <!-- Login Form -->
+    
+	  <form action="/products/create" method="POST" class="fadeIn second" >
+      
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto">
             
-          </div>
+            <label for="categoria">Categoria</label><br>
+            <select type="categoria" class="form-control" id="nombre" name="categoria" placeholder="Categoria">
+              <option >Electronica</option>
+              <option >Moda</option>
+              <option >Hogar</option>
+              <option >Inmuebles</option>
+              <option >Bazar</option>
+            </select><br>
 
-          <div class="status">
-          <label for="estado">Estado</label>
-              <select class="form-control" id="estado" name="imagen">
+            
+
+            <label for="estado">Estado</label><br>
+              <select type="categoria" class="form-control" id="estado" name="imagen"placeholder="Estado">
                 <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
                 <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
@@ -63,28 +48,38 @@
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
                 
               </select>
-            </div>
-            
-          <div class="precioProduct">
-            <label for="precio">Precio del producto</label>
-                <input id="precio" name="precio" class="form-control" >
-          </div>
 
-          <div class="col-12 col-md-2 ">
-            <label for="zona">Zona</label>
-                <input id="zona" name="zona" type="text" class="form-control" >
-          </div>
-          
-					<div class="col-12" >
-						<button type="submit" class="btn btn-outline-secondary">Cargar producto</button>
-					</div>
-				</div>
-			</form>
-		</div>
+              
+                <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Precio del producto">
+
+            
+            <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="8" placeholder="Descripcion del producto"></textarea><br>
+
+            
+                <input id="zona" name="zona" type="text" class="form-control" placeholder="Zona">
+
+                <label for="descripcion">Cargar Fotos</label>
+                <form>
+                  <div class="custom-file" style="width: 90%;">
+                    <input type="text" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Fotos</label>
+                  </div>
+                </form>
+		<br>
+		<br>
+
+
+		<input type="submit" class="fadeIn second" value="Cargar">
+	  </form>
+  
+	  
+	</div>
 
   </div>
 
+    
 
+<!-- -----------------FORMULARIO CARGA PRODUCTO----------------- -->
 
 <!-- ------------FOOTER------------ -->
 <%- include('./partials/footer')  %> 
@@ -97,4 +92,3 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <!-- ---------------JAVASCRIPT------------------- -->
-</html>
