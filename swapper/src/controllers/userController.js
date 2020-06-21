@@ -5,7 +5,7 @@ const path = require ('path')
 const fs = require('fs');
 const bcrypt = require('bcryptjs')
 const session = require('express-session');
-const { check, validationResult } = require('express-validator');
+const { check, validationResult, body } = require('express-validator');
 
 
 //ACCESO A DATA BASE
@@ -23,7 +23,25 @@ const userController ={
         res.render('login')
     },
     validationLogin : (req,res) =>{
-        res.redirect('/')
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+            for( let i=0; i< listaUsuariosJS; i++){
+                if (listaUsuariosJS[i].usuario_email == req.body.usuario_email){
+                    if(bcrypt.compareSync(req.body.usuario_contraseña1, listaUsuariosJS[i].usuario_contraseña1)){
+                        let usuarioALoguearse = listaUsuariosJS[i];
+                        
+                    };
+                };
+            };
+          if (usuarioALoguearse == undefined){
+            return res.render('login');
+          }
+            req.session.usuarioLogueado = usuarioALoguearse;
+            res.render('index')
+
+        }else{
+            return res.render('login', {errors: errors.errors})
+        }
     },
     //TODOS LOS PRODUCTOS
     index: (req, res) =>{
@@ -102,7 +120,7 @@ const userController ={
             usuario_nombre: req.body.usuario_nombre,
             usuario_dni: req.body.usuario_dni,
             usuario_tag : req.body.usuario_tag,
-            email : req.body.email,
+            usuario_email : req.body.usuario_email,
             //Contraseña encriptada con BCRYPT
             usuario_contraseña1: bcrypt.hashSync(req.body.usuario_contraseña1, 15),
             usuario_contraseña2: bcrypt.hashSync(req.body.usuario_contraseña2, 15),
@@ -110,7 +128,7 @@ const userController ={
         }
         let newDB = [...listaUsuariosJS, userStore]
         fs.writeFileSync(usersPath, JSON.stringify(newDB, null, ' '))
-        res.send(newDB) 
+        res.redirect('/') 
     },
     //CHAT MENSAJES
     mensajes: (req,res)=>{

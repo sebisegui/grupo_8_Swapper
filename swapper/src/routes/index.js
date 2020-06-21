@@ -6,9 +6,16 @@ const path = require ('path')
 const multer = require ('multer');
 const { route } = require('./users');
 const session = require('express-session');
-const { check, validationResult } = require('express-validator');
+const { check, validationResult, body } = require('express-validator');
 
+router.get('/check', function (req,res){
+  if(req.session.usuarioLogueado == undefined){
+    res.send("No estas logueado");
 
+  }else{
+    res.send("el usuario logueado es " + req.session.usuarioLogueado.usuario_email)
+  }
+})
 
 //Metodo para cargar archivos con MULTER (imagenes)
 var storage = multer.diskStorage({
@@ -26,9 +33,10 @@ var storage = multer.diskStorage({
 
 // HOME LOGIN
 router.get('/',userController.login);
+
 router.post('/', [
   check('usuario_email').isEmail().withMessage('Email invalido'),
-  check('password').isLength({min: 8}).withMessage('La contraseña es invalida')
+  check('usuario_contraseña1').isLength({min: 8}).withMessage('La contraseña es invalida')
 ] ,userController.validationLogin)
 
 // LISTA PRODUCTOS
@@ -64,6 +72,15 @@ router.post('/register',upload.any(), userController.userStore)
 // SECCION MENSAJES
 
 router.get('/mensajes',userController.mensajes)
+
+router.get ('/pruebaSession', function(req,res){
+  if(req.session.numeroVisitas == undefined){
+    req.session.numeroVisitas = 0;
+  }
+  req.session.numeroVisitas++;
+
+  res.send('numero ' + req.session.numeroVisitas)
+})
 
 
 

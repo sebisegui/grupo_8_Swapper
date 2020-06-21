@@ -88,5 +88,25 @@
   "usuario_email": "lnewlove9@dropbox.com",
   "usuario_contraseña1": "694454408217015bbc72c6fd6badccd504dd610e",
   "usuario_contraseña2": "694454408217015bbc72c6fd6badccd504dd610e"
+ },
+ {
+  "id": 11,
+  "usuario_nombre": "facundo",
+  "usuario_dni": "38614162",
+  "usuario_tag": "faculona109",
+  "usuario_email": "faculonardi@gmail.com",
+  "usuario_contraseña1": "$2a$15$cDTAWSwTtyUdAArILMZzyOj5kTCCLVdF2MROxbEdC61Qn7CEfoUBC",
+  "usuario_contraseña2": "$2a$15$LwGEAwWvFkgG8fwngZ6vJuP1VTIVrDVgU9bfGS6FnN8wiN4WLMone",
+  "avatar": "avatar-1592767206048.png"
+ },
+ {
+  "id": 12,
+  "usuario_nombre": "facundo",
+  "usuario_dni": "3333333",
+  "usuario_tag": "lonalona",
+  "usuario_email": "facundolonardi@gmail.com",
+  "usuario_contraseña1": "$2a$15$WhSrpg.M68feEhZ2j1u.aunjNg.BOOf4EDsFy6CaNONsKcxzuilKC",
+  "usuario_contraseña2": "$2a$15$M4Gl2.H9cvpFTHvJNYtQY.SVGGq7Gba4e1MxzYSzSVJplHm02yZOO",
+  "avatar": "avatar-1592776604537.png"
  }
 ]
