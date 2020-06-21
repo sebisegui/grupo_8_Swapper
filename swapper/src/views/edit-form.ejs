@@ -29,13 +29,13 @@
   
     <!-- Login Form -->
     
-	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST">
+	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="post">
       <label for="nombre">Nombre del producto</label><br>
       <input type="text" class="form-control" id="nombre" name="nombre" value="<%=producto.nombre%>">
 
             
             <label for="categoria">Categoria</label><br>
-            <select id="cars" type="categoria">
+            <select id="categoria" type="categoria" name="categoria">
               <option value="" disabled selected hidden><%=producto.categoria%></option>
               <option >Electronica</option>
               <option >Moda</option>
@@ -47,7 +47,7 @@
             
 
             <label for="estado">Estado</label><br>
-              <select type="categoria" >
+              <select type="categoria" name="estado" id="estado">
                 <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
                 <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
@@ -65,17 +65,17 @@
             <label for="zona">Zona</label><br>
                 <input id="zona" name="zona" type="text" class="form-control" value="<%=producto.zona%>">
 
-                <label for="descripcion">Cargar Fotos</label>
-                <form>
+                <label for="fotos">Cargar Fotos</label>
+                
                   <div class="custom-file" style="width: 90%;">
-                    <input type="text" class="custom-file-input" id="customFile">
+                    <input type="text" class="custom-file-input" id="customFile" name="customFile">
                     <label class="custom-file-label" for="customFile">Fotos</label>
                   </div>
-                </form>
+                
 		<br>
 		<br>
 
-    <button type="submit" class="buy-now-button">Edit</button>
+    
 		<input type="submit" class="fadeIn second" value="Editar">
 	  </form>
   

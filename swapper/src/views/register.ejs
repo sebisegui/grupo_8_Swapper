@@ -16,25 +16,20 @@
 <div class="wrapper fadeInDown">
 	
 	<div id="formContent">
-	  <!-- Tabs Titles -->
-  
-	  <!-- Icon -->
+	  <!-- ICONO -->
 	  <div class="fadeIn first">
 		<img src="/images/logo-nar.png" id="icon" alt="User Icon" >
 	  </div>
   
-	  <!-- Login Form -->
-	  <form action="/product/create" method="POST">
-		<input type="text" id="Nombre completo" class="fadeIn second" name="Nombre completo" placeholder="Nombre completo">
-		<input type="text" id="email" class="fadeIn third" name="email" placeholder="email">
-		<input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
-		<input type="text" id="codigo-postal" class="fadeIn second" name="codigo-postal" placeholder="codigo postal">
-		<input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-		<input type="text" id="password" class="fadeIn third" name="password" placeholder="Repeat password">
-		<br>
-		<br>
-
-
+	  <!-- REGISTER FORM -->
+	  <form action="/register" method="POST" enctype="multipart/form-data">
+		<input type="text" id="usuario_nombre" class="fadeIn second" name="usuario_nombre" placeholder="Nombre completo">
+		<input type='text' id="usuario_dni" class="fadeIn second" name ="usuario_dni" placeholder="Numero de DNI">
+		<input type="text" id="usuario_tag" class="fadeIn second" name="usuario_tag" placeholder="Nombre Usuario">
+		<input type="text" id="email" class="fadeIn third" name="email" placeholder="Email">
+		<input type="text" id="usuario_contraseña1" class="fadeIn third" name="usuario_contraseña1" placeholder="Contraseña">
+		<input type="text" id="usuario_contraseña2" class="fadeIn third" name="usuario_contraseña2" placeholder="Repetir Contraseña">
+        <input type="file" name="avatar">
 		<input type="submit" class="fadeIn fourth" value="Crear Usuario">
 	  </form>
   
@@ -46,7 +41,6 @@
 	</div>
 
   </div>
-
 
 <!-- ------------FORMULARIO CARGA USUARIO------------- -->
 
