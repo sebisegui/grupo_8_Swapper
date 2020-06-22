@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const multer = require('multer');
 const session = require('express-session');
 const { check, validationResult } = require('express-validator');
-
+const cookieAuth = require ('./middleware/cookieAuth')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "Nuestro mensaje secreto", resave: true, saveUninitialized: true}));
-
+app.use (cookieAuth)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

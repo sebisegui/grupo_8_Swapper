@@ -23,25 +23,39 @@ const userController ={
         res.render('login')
     },
     validationLogin : (req,res) =>{
-        let errors = validationResult(req);
-        if (errors.isEmpty()){
-            for( let i=0; i< listaUsuariosJS; i++){
-                if (listaUsuariosJS[i].usuario_email == req.body.usuario_email){
-                    if(bcrypt.compareSync(req.body.usuario_contraseña1, listaUsuariosJS[i].usuario_contraseña1)){
-                        let usuarioALoguearse = listaUsuariosJS[i];
-                        
-                    };
-                };
-            };
-          if (usuarioALoguearse == undefined){
-            return res.render('login');
-          }
-            req.session.usuarioLogueado = usuarioALoguearse;
-            res.render('index')
-
+        let validation = validationResult(req);
+        let errors = validation.errors;
+        if( errors == ""){
+         let usuario = listaUsuariosJS.find( userLogin => userLogin.usuario_email == req.body.usuario_email);
+         if (usuario != undefined){
+            if (bcrypt.compareSync(req.body.usuario_contraseña1, usuario.usuario_contraseña1)){
+                req.session.userId = usuario.id;
+                if(req.body.recordame){
+                    res.cookie('userCookie',usuario.id,{maxAge:10000000})
+                }
+                res.redirect('/products')
+            }else{
+                res.render('login',{errors})
+            }           
         }else{
-            return res.render('login', {errors: errors.errors})
-        }
+            res.render('login',{errors})
+        }   
+    }else{
+        res.render('login',{errors})
+    }
+},
+
+    logout: (req,res) =>{
+        req.session.destroy()
+        res.cookie('userCookie',null,{maxAge:1})
+        res.redirect('/')
+        },
+
+
+    profile: (req,res) =>{
+        let user =listaUsuariosJS.find( userToLogin => userToLogin.id == req.session.userId);
+        res.render('profile',{user})
+
     },
     //TODOS LOS PRODUCTOS
     index: (req, res) =>{

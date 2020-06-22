@@ -7,15 +7,9 @@ const multer = require ('multer');
 const { route } = require('./users');
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
+const authMiddleware = require('../middleware/authMiddleware');
 
-router.get('/check', function (req,res){
-  if(req.session.usuarioLogueado == undefined){
-    res.send("No estas logueado");
 
-  }else{
-    res.send("el usuario logueado es " + req.session.usuarioLogueado.usuario_email)
-  }
-})
 
 //Metodo para cargar archivos con MULTER (imagenes)
 var storage = multer.diskStorage({
@@ -36,8 +30,11 @@ router.get('/',userController.login);
 
 router.post('/', [
   check('usuario_email').isEmail().withMessage('Email invalido'),
-  check('usuario_contraseña1').isLength({min: 8}).withMessage('La contraseña es invalida')
+  check('usuario_contraseña1').isLength({min: 8}).withMessage('La contraseña no es correcta')
 ] ,userController.validationLogin)
+
+//Logout
+router.get('/logout',userController.logout)
 
 // LISTA PRODUCTOS
 
