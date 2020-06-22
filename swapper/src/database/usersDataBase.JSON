@@ -108,5 +108,25 @@
   "usuario_contraseña1": "$2a$15$WhSrpg.M68feEhZ2j1u.aunjNg.BOOf4EDsFy6CaNONsKcxzuilKC",
   "usuario_contraseña2": "$2a$15$M4Gl2.H9cvpFTHvJNYtQY.SVGGq7Gba4e1MxzYSzSVJplHm02yZOO",
   "avatar": "avatar-1592776604537.png"
+ },
+ {
+  "id": 13,
+  "usuario_nombre": "Milton Chico",
+  "usuario_dni": "38859",
+  "usuario_tag": "miltrotn",
+  "usuario_email": "milton.chico@outlook.com",
+  "usuario_contraseña1": "$2a$15$mCNnEr.rA9zI/seP4RDR1eXHsGMsjko5Vv1qRHEjS1uv50vfvulsm",
+  "usuario_contraseña2": "$2a$15$ldP2HcOLxsvoe7kpu0mMxe1gdGPLWyJ2xYFq5.exdwUd/xkLI4AVK",
+  "avatar": "avatar-1592864844920.jpg"
+ },
+ {
+  "id": 14,
+  "usuario_nombre": "Milton Chico",
+  "usuario_dni": "38859689",
+  "usuario_tag": "MiltonChico",
+  "usuario_email": "milton.chico@outlook.com",
+  "usuario_contraseña1": "$2a$15$wVBJ9TsRLiG8wX9iVdVvYu6l57.1zmkepWUa93ly2T8sV5RL/26r.",
+  "usuario_contraseña2": "$2a$15$scZpCtA8n0OwaPTVnTpbJu1XVwOu8wUVU.F1JYKHNsO/oEqagcSc6",
+  "avatar": "avatar-1592864957288.jpg"
  }
 ]
