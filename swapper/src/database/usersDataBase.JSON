@@ -128,5 +128,15 @@
   "usuario_contraseña1": "$2a$15$wVBJ9TsRLiG8wX9iVdVvYu6l57.1zmkepWUa93ly2T8sV5RL/26r.",
   "usuario_contraseña2": "$2a$15$scZpCtA8n0OwaPTVnTpbJu1XVwOu8wUVU.F1JYKHNsO/oEqagcSc6",
   "avatar": "avatar-1592864957288.jpg"
+ },
+ {
+  "id": 15,
+  "usuario_nombre": "seabstian segui",
+  "usuario_dni": "38698737",
+  "usuario_tag": "sebiseg",
+  "usuario_email": "ssegui@hotmail.com",
+  "usuario_contraseña1": "$2a$15$j2K3I.APao5G.SDH6i6Xmu7lq7wZsY1EstfgVcCosDMOZB2eVIT6K",
+  "usuario_contraseña2": "$2a$15$hx6ISTKLh6rAmCANLQZOUeL83kkwsq6HPaLQtTkfgwmqaaAS0yrhK",
+  "avatar": "avatar-1592882904672.jpg"
  }
 ]
