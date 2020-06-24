@@ -138,5 +138,25 @@
   "usuario_contraseña1": "$2a$15$j2K3I.APao5G.SDH6i6Xmu7lq7wZsY1EstfgVcCosDMOZB2eVIT6K",
   "usuario_contraseña2": "$2a$15$hx6ISTKLh6rAmCANLQZOUeL83kkwsq6HPaLQtTkfgwmqaaAS0yrhK",
   "avatar": "avatar-1592882904672.jpg"
+ },
+ {
+  "id": 16,
+  "usuario_nombre": "seabstian segui",
+  "usuario_dni": "38698737",
+  "usuario_tag": "sebiseg",
+  "usuario_email": "ssegui@hotmail.com",
+  "usuario_contraseña1": "$2a$15$2Tjcv06IsFhYXX1u/QcPTuEquNgcQ/IctgzjK.ymVhtGs.VJEmJBm",
+  "usuario_contraseña2": "$2a$15$jEbipV0tAp0xlooaehko0O5H11PZJeoWumsqvtQV3/0VY0akmBRRS",
+  "avatar": "avatar-1592954006926.jpg"
+ },
+ {
+  "id": 17,
+  "usuario_nombre": "seabstian segui",
+  "usuario_dni": "1233245345",
+  "usuario_tag": "sebiseg",
+  "usuario_email": "ssegui@hotmail.com",
+  "usuario_contraseña1": "$2a$15$tUmHbPsmdnXQoX8gIW4lFeQoD6KWwaZJs9afU/dFfhlHbGmtV39Wu",
+  "usuario_contraseña2": "$2a$15$xpgLS.FMv5HKFzY7yD6/reR5MvSfUZPxm7xMMr1j99powXjsEAMey",
+  "avatar": "avatar-1592954230249.jpg"
  }
 ]
