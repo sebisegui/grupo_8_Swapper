@@ -6,6 +6,8 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs')
 const session = require('express-session');
 const { check, validationResult, body } = require('express-validator');
+const DB = require('../database/models')
+const OP = DB.Sequelize.Op
 
 
 //ACCESO A DATA BASE
@@ -57,9 +59,22 @@ const userController ={
 
     },
     //TODOS LOS PRODUCTOS
-    index: (req, res) =>{
-        res.render('index', {listaProductosJS});
-    },
+    index: (req, res) => {
+        DB.Producto.findAll()
+        .then((listado) => {
+        res.render('index', {listado : listado})
+    })
+    .catch((error) => {
+    res.send(error)})
+    }
+    // async (req, res) =>{
+    //         const productos = await DB.Producto.findAll({
+    //             include:['imagenes','likes','categorias','usuarios']
+    //         })
+    //         res.render('index',{productos:productos})
+        
+        //res.render('index', {listaProductosJS});
+    ,
     //DETALLE DE PRODUCTO CON SU ID
     detalleProduct: (req,res) =>{
         let producto = listaProductosJS.find(producto => producto.id == req.params.id)

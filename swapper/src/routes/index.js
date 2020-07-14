@@ -38,7 +38,7 @@ router.get('/logout',userController.logout)
 
 // LISTA PRODUCTOS
 
-router.get('/products',authMiddleware, userController.index);
+router.get('/products', userController.index);
 
 // FORMULARIO CARGA PRODUCTO
 
