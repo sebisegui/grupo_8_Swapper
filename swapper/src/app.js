@@ -9,8 +9,10 @@ const session = require('express-session');
 const { check, validationResult } = require('express-validator');
 const cookieAuth = require ('./middleware/cookieAuth')
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var siteRouter = require('./routes/siteRouter')
 
 var app = express();
 
@@ -29,6 +31,7 @@ app.use (cookieAuth)
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', siteRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

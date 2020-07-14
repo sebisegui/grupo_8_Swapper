@@ -44,7 +44,6 @@ const userController ={
         res.render('login',{errors})
     }
 },
-
     logout: (req,res) =>{
         req.session.destroy()
         res.cookie('userCookie',null,{maxAge:1})

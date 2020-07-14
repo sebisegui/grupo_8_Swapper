@@ -91,72 +91,12 @@
  },
  {
   "id": 11,
-  "usuario_nombre": "facundo",
-  "usuario_dni": "38614162",
-  "usuario_tag": "faculona109",
-  "usuario_email": "faculonardi@gmail.com",
-  "usuario_contraseña1": "$2a$15$cDTAWSwTtyUdAArILMZzyOj5kTCCLVdF2MROxbEdC61Qn7CEfoUBC",
-  "usuario_contraseña2": "$2a$15$LwGEAwWvFkgG8fwngZ6vJuP1VTIVrDVgU9bfGS6FnN8wiN4WLMone",
-  "avatar": "avatar-1592767206048.png"
- },
- {
-  "id": 12,
-  "usuario_nombre": "facundo",
-  "usuario_dni": "3333333",
-  "usuario_tag": "lonalona",
-  "usuario_email": "facundolonardi@gmail.com",
-  "usuario_contraseña1": "$2a$15$WhSrpg.M68feEhZ2j1u.aunjNg.BOOf4EDsFy6CaNONsKcxzuilKC",
-  "usuario_contraseña2": "$2a$15$M4Gl2.H9cvpFTHvJNYtQY.SVGGq7Gba4e1MxzYSzSVJplHm02yZOO",
-  "avatar": "avatar-1592776604537.png"
- },
- {
-  "id": 13,
-  "usuario_nombre": "Milton Chico",
-  "usuario_dni": "38859",
-  "usuario_tag": "miltrotn",
-  "usuario_email": "milton.chico@outlook.com",
-  "usuario_contraseña1": "$2a$15$mCNnEr.rA9zI/seP4RDR1eXHsGMsjko5Vv1qRHEjS1uv50vfvulsm",
-  "usuario_contraseña2": "$2a$15$ldP2HcOLxsvoe7kpu0mMxe1gdGPLWyJ2xYFq5.exdwUd/xkLI4AVK",
-  "avatar": "avatar-1592864844920.jpg"
- },
- {
-  "id": 14,
   "usuario_nombre": "Milton Chico",
   "usuario_dni": "38859689",
-  "usuario_tag": "MiltonChico",
+  "usuario_tag": "miltoncopado123",
   "usuario_email": "milton.chico@outlook.com",
-  "usuario_contraseña1": "$2a$15$wVBJ9TsRLiG8wX9iVdVvYu6l57.1zmkepWUa93ly2T8sV5RL/26r.",
-  "usuario_contraseña2": "$2a$15$scZpCtA8n0OwaPTVnTpbJu1XVwOu8wUVU.F1JYKHNsO/oEqagcSc6",
-  "avatar": "avatar-1592864957288.jpg"
- },
- {
-  "id": 15,
-  "usuario_nombre": "seabstian segui",
-  "usuario_dni": "38698737",
-  "usuario_tag": "sebiseg",
-  "usuario_email": "ssegui@hotmail.com",
-  "usuario_contraseña1": "$2a$15$j2K3I.APao5G.SDH6i6Xmu7lq7wZsY1EstfgVcCosDMOZB2eVIT6K",
-  "usuario_contraseña2": "$2a$15$hx6ISTKLh6rAmCANLQZOUeL83kkwsq6HPaLQtTkfgwmqaaAS0yrhK",
-  "avatar": "avatar-1592882904672.jpg"
- },
- {
-  "id": 16,
-  "usuario_nombre": "seabstian segui",
-  "usuario_dni": "38698737",
-  "usuario_tag": "sebiseg",
-  "usuario_email": "ssegui@hotmail.com",
-  "usuario_contraseña1": "$2a$15$2Tjcv06IsFhYXX1u/QcPTuEquNgcQ/IctgzjK.ymVhtGs.VJEmJBm",
-  "usuario_contraseña2": "$2a$15$jEbipV0tAp0xlooaehko0O5H11PZJeoWumsqvtQV3/0VY0akmBRRS",
-  "avatar": "avatar-1592954006926.jpg"
- },
- {
-  "id": 17,
-  "usuario_nombre": "seabstian segui",
-  "usuario_dni": "1233245345",
-  "usuario_tag": "sebiseg",
-  "usuario_email": "ssegui@hotmail.com",
-  "usuario_contraseña1": "$2a$15$tUmHbPsmdnXQoX8gIW4lFeQoD6KWwaZJs9afU/dFfhlHbGmtV39Wu",
-  "usuario_contraseña2": "$2a$15$xpgLS.FMv5HKFzY7yD6/reR5MvSfUZPxm7xMMr1j99powXjsEAMey",
-  "avatar": "avatar-1592954230249.jpg"
+  "usuario_contraseña1": "$2a$15$2ALxLum8gdXvdGY13rcXDuyhZ8EuMWpdpWgTZBwzfNypO04L8UnL.",
+  "usuario_contraseña2": "$2a$15$E6IIFwA1P0hEu8cozxhJTuTNfntB/XMrivIxT2XAgnUEyYA1p28my",
+  "avatar": "avatar-1594579942519.jfif"
  }
 ]
