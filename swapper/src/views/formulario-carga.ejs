@@ -24,22 +24,21 @@
   
     <!-- Login Form -->
     
-	  <form action="/products/create" method="POST" class="fadeIn second" >
+	  <form action="/products/create" method="POST" class="fadeIn second" enctype="multipart/form-data" >
       
       <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del producto">
             
             <label for="categoria">Categoria</label><br>
-            <select type="categoria" class="form-control" id="categoria" name="categoria" placeholder="Categoria">
-              <option >Electronica</option>
-              <option >Moda</option>
-              <option >Hogar</option>
-              <option >Inmuebles</option>
-              <option >Bazar</option>
-            </select><br>
+            <select type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria">
+              <% categorias.forEach(categoria => {%> 
+              <option value="<%=categoria.id%>"><%=categoria.nombre%></option>
+              <%})%>
+            </select>
+            <br>
 
             
 
-            <label for="estado">Estado</label><br>
+            <!-- <label for="estado">Estado</label><br>
               <select type="categoria" class="form-control" id="estado" name="estado" placeholder="Estado">
                 <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
                 <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
@@ -47,7 +46,7 @@
                 <option value="usado">&#9733; &#9733; &#9733; &#9733; &#9734</option>
                 <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
                 
-              </select>
+              </select> -->
 
               
                 <input id="precio" name="precio" type="number" class="form-control" aria-label="Text input with dropdown button" placeholder="Precio del producto">
@@ -61,7 +60,7 @@
                 <label for="fotos">Cargar Fotos</label>
                 
                   <div class="custom-file" style="width: 90%;">
-                    <input type="text" class="custom-file-input" id="customFile">
+                    <input type="file" class="custom-file-input" id="customFile" name="foto_portada">
                     <label class="custom-file-label" for="customFile">Fotos</label>
                   </div>
                 

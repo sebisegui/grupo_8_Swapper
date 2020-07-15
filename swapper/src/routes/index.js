@@ -14,7 +14,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 //Metodo para cargar archivos con MULTER (imagenes)
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'public/images/users')
+      cb(null, 'public/images/products')
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
@@ -29,8 +29,8 @@ var storage = multer.diskStorage({
 router.get('/',userController.login);
 
 router.post('/', [
-  check('usuario_email').isEmail().withMessage('Email invalido'),
-  check('usuario_contraseña1').isLength({min: 8}).withMessage('La contraseña no es correcta')
+  check('email').isEmail().withMessage('Email invalido'),
+  check('contraseña').isLength({min: 8}).withMessage('La contraseña no es correcta')
 ] ,userController.validationLogin)
 
 //Logout
@@ -43,7 +43,7 @@ router.get('/products', userController.index);
 // FORMULARIO CARGA PRODUCTO
 
 router.get('/products/create', userController.cargaProduct);
-router.post('/products/create', userController.store)
+router.post('/products/create', upload.any(), userController.store)
 
 // DETALLE DE PRODUCTO
 
@@ -66,9 +66,6 @@ router.get('/register', userController.register);
 router.post('/register',upload.any(), userController.userStore)
 
 
-// SECCION MENSAJES
-
-router.get('/mensajes',userController.mensajes)
 
 
 

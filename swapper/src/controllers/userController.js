@@ -10,6 +10,8 @@ const DB = require('../database/models')
 const OP = DB.Sequelize.Op
 
 
+
+
 //ACCESO A DATA BASE
 const usersPath = path.join(__dirname, '../database/usersDataBase.json')
 const productsPath = path.join(__dirname, '../database/productsDataBase.json')
@@ -24,27 +26,21 @@ const userController ={
     login: (req,res) =>{
         res.render('login')
     },
-    validationLogin : (req,res) =>{
+    validationLogin :async (req,res) =>{
         let validation = validationResult(req);
         let errors = validation.errors;
         if( errors == ""){
-         let usuario = listaUsuariosJS.find( userLogin => userLogin.usuario_email == req.body.usuario_email);
-         if (usuario != undefined){
-            if (bcrypt.compareSync(req.body.usuario_contraseña1, usuario.usuario_contraseña1)){
+         let usuario = await DB.Usuario.findAll( { where: { email: req.body.email }});
+           if (usuario != undefined){
+             if ( bcrypt.compareSync ( await req.body.contraseña, usuario.contraseña))
                 req.session.userId = usuario.id;
                 if(req.body.recordame){
                     res.cookie('userCookie',usuario.id,{maxAge:10000000})
                 }
                 res.redirect('/products')
-            }else{
-                res.render('login',{errors})
-            }           
-        }else{
-            res.render('login',{errors})
-        }   
-    }else{
+             }
+        }
         res.render('login',{errors})
-    }
 },
     logout: (req,res) =>{
         req.session.destroy()
@@ -86,7 +82,8 @@ const userController ={
            include:['codPost']
        })
        let imagen = await DB.Imagen.findAll({ where: { prod_id: req.params.id } },
-        {include:['productos']})
+        {include:['productos']
+       })
     
         res.render('detalle',{productoDetalle, productos,usuarios,imagen})
        },
@@ -94,33 +91,36 @@ const userController ={
         
     
     //FORMULARIO DE CARGA DE PRODUCTO
-    cargaProduct: (req, res) =>{
-        res.render('formulario-carga')
+    cargaProduct: async (req, res) =>{
+        let categorias =  await DB.Categoria.findAll()
+        res.render('formulario-carga',{categorias})
     },
+
     //EDITAR UN PRODUCTO CON SU ID
-    edit: async (req,res) =>{
+    edit: async (req,res,next) =>{
         let producto = await DB.Producto.findByPk(req.params.id,{
             include:['imagenes','likes','categorias','usuarios']
         })
         res.render('edit-form', {producto:productToEdit})
     },
-    //CARGAR UN PRODUCTO EN LA BASE DE DATOS
-    store: (req,res) =>{
-        let storeProduct ={
-            id: listaProductosJS[listaProductosJS.length-1].id+1,
-            nombre: req.body.nombre,
-            imagen: req.body.imagen,
-            zona: req.body.zona,
-            categoria: req.body.categoria,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            estado: req.body.estado
-        }
-        listaProductosJS.push(storeProduct);
-        fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
-            res.redirect('/products/')
 
-    },     
+    //CARGAR UN PRODUCTO EN LA BASE DE DATOS
+      store: async (req,res) =>{
+          let producto = {
+              ...req.body,
+            foto_portada : req.files[0].filename
+          } 
+          try{
+              await DB.Producto.create(producto)
+              res.redirect('/products')
+          }
+          catch (error){
+              res.send ('error')
+          }
+      },
+    
+    
+        
     //ACTUALIZAR PRODUCTO
     update: (req,res) =>{
         let idProducto = req.params.id;
@@ -150,33 +150,48 @@ const userController ={
     },
     //FORMULARIO DE REGISTRO
     register: (req,res) =>{
-    
         res.render('register')
     },
     //GUARDAR UN USUARIO EN BASE DE DATOS
 
     //Metodo para guardar un Usuario al momento de Registrarse, modificando la DB
-    userStore : (req,res,next) =>{
-        userStore = {
-            //Estos campos los completo con el mismo nombre de la base de datos y obtengo info desde el formulario
-            id: listaUsuariosJS[listaUsuariosJS.length - 1].id + 1,
-            usuario_nombre: req.body.usuario_nombre,
-            usuario_dni: req.body.usuario_dni,
-            usuario_tag : req.body.usuario_tag,
-            usuario_email : req.body.usuario_email,
+    userStore:async (req,res) =>{
+        let usuarioNuevo ={
+            nombre: req.body.nombre,
+            telefono: req.body.telefono,
+            username : req.body.username,
+            email : req.body.email,
+            localidad: req.body.localidad,
             //Contraseña encriptada con BCRYPT
-            usuario_contraseña1: bcrypt.hashSync(req.body.usuario_contraseña1, 15),
-            usuario_contraseña2: bcrypt.hashSync(req.body.usuario_contraseña2, 15),
-            avatar:req.files[0].filename,
+            contraseña: bcrypt.hashSync(req.body.contraseña, 15),
+            avatar : req.files[0].filename,
+        } 
+        try{
+            await DB.Usuario.create(usuarioNuevo)
+            res.redirect('/')
         }
-        let newDB = [...listaUsuariosJS, userStore]
-        fs.writeFileSync(usersPath, JSON.stringify(newDB, null, ' '))
-        res.redirect('/') 
+        catch (error){
+            res.send ('error')
+        }
     },
-    //CHAT MENSAJES
-    mensajes: (req,res)=>{
-        res.render('mensajes')
-    }
+
+        // userStore = {
+        //     //Estos campos los completo con el mismo nombre de la base de datos y obtengo info desde el formulario
+        //     id: listaUsuariosJS[listaUsuariosJS.length - 1].id + 1,
+        //     usuario_nombre: req.body.usuario_nombre,
+        //     usuario_dni: req.body.usuario_dni,
+        //     usuario_tag : req.body.usuario_tag,
+        //     usuario_email : req.body.usuario_email,
+        //     //Contraseña encriptada con BCRYPT
+        //     usuario_contraseña1: bcrypt.hashSync(req.body.usuario_contraseña1, 15),
+        //     usuario_contraseña2: bcrypt.hashSync(req.body.usuario_contraseña2, 15),
+        //     avatar:req.files[0].filename,
+        // }
+        // let newDB = [...listaUsuariosJS, userStore]
+        // fs.writeFileSync(usersPath, JSON.stringify(newDB, null, ' '))
+        // res.redirect('/') 
+    
+    
 }
 
 module.exports = userController

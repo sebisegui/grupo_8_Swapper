@@ -9,11 +9,12 @@ module.exports= (sequelize,DataTypes) =>{
             },
             nombre:DataTypes.STRING,
             username:DataTypes.STRING,
-            Email:DataTypes.STRING,
+            email:DataTypes.STRING,
             contraseña:DataTypes.STRING,
             telefono:DataTypes.STRING,
             avatar:DataTypes.STRING,
             codigo_postal:DataTypes.INTEGER,
+            localidad:DataTypes.STRING
         },
         {
             tableName:'usuarios',
