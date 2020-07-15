@@ -70,9 +70,8 @@ const userController ={
              let usuarios = await DB.Usuario.findAll({
                 include:['codPost']
             })
-            let imagen = await DB.Imagen.findAll({ where: { foto_portada: 1}},{
-                include:['productos']})
-             res.render('index',{productosDeMuestra,productos,usuarios,imagen})
+            
+             res.render('index',{productosDeMuestra,productos,usuarios})
             },
 
     //DETALLE DE PRODUCTO CON SU ID

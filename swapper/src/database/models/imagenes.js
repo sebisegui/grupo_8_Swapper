@@ -9,7 +9,7 @@ module.exports= (sequelize,DataTypes) =>{
             },
             imagenes:DataTypes.STRING,
             prod_id:DataTypes.INTEGER,
-            foto_portada:DataTypes.INTEGER,
+            
         },
         {
             tableName:'imagenes',
