@@ -59,34 +59,50 @@ const userController ={
 
     },
     //TODOS LOS PRODUCTOS
-    index: (req, res) => {
-        DB.Producto.findAll()
-        .then((listado) => {
-        res.render('index', {listado : listado})
-    })
-    .catch((error) => {
-    res.send(error)})
-    }
-    // async (req, res) =>{
-    //         const productos = await DB.Producto.findAll({
-    //             include:['imagenes','likes','categorias','usuarios']
-    //         })
-    //         res.render('index',{productos:productos})
-        
-        //res.render('index', {listaProductosJS});
-    ,
+    index: async (req, res) =>{
+            let productosDeMuestra = await DB.Producto.findAll({
+                limit:6},{
+                include:['imagenes','likes','categorias','usuarios']
+                })
+             let productos = await DB.Producto.findAll({
+                 include:['imagenes','likes','categorias','usuarios']
+             })
+             let usuarios = await DB.Usuario.findAll({
+                include:['codPost']
+            })
+            let imagen = await DB.Imagen.findAll({ where: { foto_portada: 1}},{
+                include:['productos']})
+             res.render('index',{productosDeMuestra,productos,usuarios,imagen})
+            },
+
     //DETALLE DE PRODUCTO CON SU ID
-    detalleProduct: (req,res) =>{
-        let producto = listaProductosJS.find(producto => producto.id == req.params.id)
-        res.render('detalle', {producto: producto,listaProductosJS})
-    },
+    detalleProduct: async (req, res) =>{
+        let productoDetalle = await DB.Producto.findByPk(req.params.id,{
+            include:['imagenes','likes','categorias','usuarios']
+        })
+        let productos = await DB.Producto.findAll({
+            include:['imagenes','likes','categorias','usuarios']
+        })
+        let usuarios = await DB.Usuario.findAll({
+           include:['codPost']
+       })
+       let imagen = await DB.Imagen.findAll({ where: { prod_id: req.params.id } },
+        {include:['productos']})
+    
+        res.render('detalle',{productoDetalle, productos,usuarios,imagen})
+       },
+        
+        
+    
     //FORMULARIO DE CARGA DE PRODUCTO
     cargaProduct: (req, res) =>{
         res.render('formulario-carga')
     },
     //EDITAR UN PRODUCTO CON SU ID
-    edit: (req,res) =>{
-        let productToEdit = listaProductosJS.find(producto => producto.id == req.params.id)
+    edit: async (req,res) =>{
+        let producto = await DB.Producto.findByPk(req.params.id,{
+            include:['imagenes','likes','categorias','usuarios']
+        })
         res.render('edit-form', {producto:productToEdit})
     },
     //CARGAR UN PRODUCTO EN LA BASE DE DATOS

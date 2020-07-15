@@ -27,31 +27,24 @@
                         <h2>Swapp</h2>
                       </div>
         
-                        <div class="col-12 col-md-12 col-lg-12" id="Columna-matches" >
-                          <% for(let i=7;i<13;i++) {%> 
-                          <div class="col-12 col-lg-12" id="matches" >
-                        
-                            
-                            <div class="col-lg-12 col-12" style="">
-                              <div class="hover hover-5 text-white rounded product-box_image "><img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
-                                <div class="hover-overlay"></div>
-                                <div class="hover-5-content">
-                                  <h6><p style="color: black;text-align: center;"><%= listaProductosJS[i].nombre %></p></h6>
-                                  <h3 class="hover-5-title text-uppercase font-weight-light mb-0">
-                                    <strong class="font-weight-bold text-white"></strong>
-                                    <span>Sebastian</span>
-                                    <br>
-                                    <span>1534967520</span>
-                                    <a href="/products/<%=listaProductosJS[i].id%>">
-                                      <i class="fa fa-info" aria-hidden="true" style="color:#ef4a22;"></i> <br></a>
-                                  </h3>
+                      <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+
+                        <% productos.forEach(producto =>{%> 
+
+                        <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
+                          <div class="hovereffect">
+                            <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
+                                <div class="overlay">
+                                    <h2><%= producto.nombre %></h2>
+                            <p>
+                              <a href="/products/<%=producto.id%>">More info</a>
+                            </p>
                                 </div>
-                              </div>
-                            </div>
-        
-                          </div>
-                          <% }%> 
                         </div>
+      
+                        </div>
+                        <% })%> 
+                      </div>
         
                         
         
@@ -68,10 +61,10 @@
             <!-- --------------------DETALLE PRODUCTOS--------------------- -->
 
               <div class="col-lg-9 col-12 col-md-12">
-                <h1 class="detallesProducto" style="text-align: center;"><%= producto.nombre %></h1>
+                <h1 class="detallesProducto" style="text-align: center;"><%= productoDetalle.nombre %></h1>
                 <div class="row">
                   <div class="col-lg-4 col-md-5 col-12 mb-4" style="align-content: center;">
-                  <div class="slider" style="">
+                  <div class="slider" >
                     <input type="radio" name="toggle" id="btn-1" checked>
                     <input type="radio" name="toggle" id="btn-2">
                     <input type="radio" name="toggle" id="btn-3">
@@ -83,46 +76,36 @@
                     </div>
                   
                     <ul class="slides">
+                      <%imagen.forEach(images =>{%>
                       <li class="slide">
                         <div>
-                        <img src="/images/products/<%=producto.imagen%>" id="imgslider">
+                        <img src="/images/products/<%=images.imagenes %>" id="imgslider">
                       </div>
                     
-                      </li>
-                      <li class="slide">
-                        <div>
-                        <img src="/images/products/<%=producto.imagen%>" id="imgslider">
-                      </div>
-                    
-                      </li>
-                      <li class="slide">
-                        <div>
-                        <img src="/images/products/<%=producto.imagen%>" id="imgslider">
-                      </div>
-                    
-                      </li>
+                     </li><% })%>
+               
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-12" id="description-card" style="">
+                <div class="col-lg-7 col-md-7 col-12" id="description-card" >
                   <div class="card-deck" >
                     <div class="card border-light mb-3" id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
                       <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Categoria</div>
                       <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
-                        <h5 class="card-title" style="text-align: center;"><%= producto.categoria %></h5>
+                        <h5 class="card-title" style="text-align: center;"><%= productoDetalle.categorias.nombre %></h5>
                       </div>
                     </div>
                     <div class="card border-light mb-3 " id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
                       <div class="card-header" style="background-color:white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Zona</div>
                       <div class="card-body text-dark" style="background-color: rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
-                        <h5 class="card-title" style="text-align: center;"><%= producto.zona %></h5>
+                        <h5 class="card-title" style="text-align: center;"><%= productoDetalle.zona %></h5>
                       </div>
                     </div>
                     <div class="card border-light mb-3" id="carddesc" style="max-width: 10rem;max-height: 120px;margin: auto; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
                       <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Precio</div>
                       <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;">
-                        <h5 class="card-title" style="text-align: center;"><%= producto.precio %></h5>
+                        <h5 class="card-title" style="text-align: center;"><%= productoDetalle.precio %></h5>
                       </div>
                     </div>
                   </div>
@@ -130,7 +113,7 @@
                     <div class="card border-light mb-3" id="carddesc2" style="height:fit-content; border-top-left-radius: 20px;border-bottom-right-radius: 40px;margin-top: 15px;background-color: #f6f6f6;">
                       <div class="card-header" style="background-color: white;border-top-left-radius: 20px;border-color:#ef4a22;text-align: center;">Descripcion</div>
                       <div class="card-body text-dark" style="background-color:  rgba(117, 117, 117, 0);border-bottom-right-radius: 40px;height: 300px;padding-top: 10px;;">
-                        <h5 class="card-title" style="text-align: center;margin-top: 0px;padding: 20px;"><%= producto.descripcion %></h5>
+                        <h5 class="card-title" style="text-align: center;margin-top: 0px;padding: 20px;"><%= productoDetalle.descripcion %></h5>
                       </div>
                     </div>
                     

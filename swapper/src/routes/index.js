@@ -42,16 +42,16 @@ router.get('/products', userController.index);
 
 // FORMULARIO CARGA PRODUCTO
 
-router.get('/products/create',authMiddleware, userController.cargaProduct);
+router.get('/products/create', userController.cargaProduct);
 router.post('/products/create', userController.store)
 
 // DETALLE DE PRODUCTO
 
-router.get('/products/:id',authMiddleware, userController.detalleProduct);
+router.get('/products/:id', userController.detalleProduct);
 
 // FORMULARIO EDIT PRODUCTO
 
-router.get('/products/edit/:id',authMiddleware, userController.edit)
+router.get('/products/edit/:id', userController.edit)
 router.put('/products/edit/:id', userController.update)
 
 // ELIMINAR PRODUCTO
@@ -68,7 +68,7 @@ router.post('/register',upload.any(), userController.userStore)
 
 // SECCION MENSAJES
 
-router.get('/mensajes',authMiddleware,userController.mensajes)
+router.get('/mensajes',userController.mensajes)
 
 
 

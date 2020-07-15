@@ -44,23 +44,23 @@
 
                   
 
-                  <% for(let i=7;i<13;i++) {%> 
+                  <% productos.forEach(producto =>{%> 
 
                     
                     
                   <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
                     <div class="hovereffect">
-                      <img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                      <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
                           <div class="overlay">
-                              <h2><%= listaProductosJS[i].nombre %></h2>
+                              <h2><%= producto.nombre %></h2>
                       <p>
-                        <a href="/products/<%=listaProductosJS[i].id%>">More info</a>
+                        <a href="/products/<%=producto.id%>">More info</a>
                       </p>
                           </div>
                   </div>
 
                   </div>
-                  <% }%> 
+                  <% })%> 
                 </div>
                
               </div>
@@ -75,26 +75,26 @@
 
                   <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
 
-                   <% for(let i=12;i<14;i++) {%> 
+                   <% productos.forEach(producto => {%> 
                     <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
 
                     <div class="hovereffect">
-                      <img src="/images/products/<%=listaProductosJS[i].imagen%>" style="width: 100%;margin-right: auto;">
+                      <img src="" style="width: 100%;margin-right: auto;">
                           <div class="overlay">
-                              <h2><%= listaProductosJS[i].nombre %></h2><br>
-                              <a href='/products/edit/<%=listaProductosJS[i].id%>' class='editar'>
+                              <h2><%= producto.nombre %></h2><br>
+                              <a href='/products/edit/<%=producto.id%>' class='editar'>
                                 <button type="submit" class="btn btn-secondary btn-sm">Editar</button>
                                </a><br>
                           
                             
-                                <form action="/products/<%= listaProductosJS[i].id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
                                   <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                                 </form>
                           </div>
                   </div> 
                                      
                    </div>                                  
-                    <% }%> 
+                    <% })%> 
                   </div>
               </div>         
              </li>                       
@@ -109,16 +109,19 @@
   <div class="col-lg-9 col-12 col-md-12 " id="colProduct" >
         
     <div class="row" style="margin-top: 40px;">
-          <% for(let i=0;i<6;i++) { %> 
+      <%productosDeMuestra.forEach(producto =>{%> 
+        
             <div class="col-12 col-md-6 col-lg-4 contenedor-producto" style>
               <div class="card h-100" style="border-radius: 30px; box-shadow: black;">
-                <a href="/products/<%=productos.id%>"><img src="/images/products/<%=listaProductosJS[i].imagen%>" alt="imagen de producto" class= "foto-productos">                  
+                
+                <a href="/products/<%=producto.id%>"><img src="/images/products/<%=producto.foto_portada%>" alt="imagen de producto" class= "foto-productos">                  
                 </a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#"><%= listaProductosJS[i].nombre %></a>
+                    <a href="#"><%= producto.nombre %></a>
                   </h4>
-                  <p class="card-text">Donde se encuentra: <%= listaProductosJS[i].zona %></p>
+                  
+                  <p class="card-text">Donde se encuentra:  </p>
                   <div class="botones">
                     <a class="btn btn-outline-danger" href="#" id="butnok" >
                       <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
@@ -131,7 +134,8 @@
                 </div>
               </div> 
             </div>
-            <% }%>         
+            
+            <% })%>        
       </div>            
   </div>
               <!-- -------------------PRODUCTOS--------------------- -->
