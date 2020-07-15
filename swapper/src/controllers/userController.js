@@ -30,12 +30,13 @@ const userController ={
         let validation = validationResult(req);
         let errors = validation.errors;
         if( errors == ""){
-         let usuario = await DB.Usuario.findAll( { where: { email: req.body.email }});
+         let usuario = await DB.Usuario.findOne( { where: { email: req.body.email }});
            if (usuario != undefined){
-             if ( bcrypt.compareSync ( await req.body.contraseña, usuario.contraseña))
+             if ( bcrypt.compareSync (req.body.password, usuario.password))
                 req.session.userId = usuario.id;
                 if(req.body.recordame){
                     res.cookie('userCookie',usuario.id,{maxAge:10000000})
+                    
                 }
                 res.redirect('/products')
              }
@@ -60,14 +61,19 @@ const userController ={
                 limit:6},{
                 include:['imagenes','likes','categorias','usuarios']
                 })
-             let productos = await DB.Producto.findAll({
-                 include:['imagenes','likes','categorias','usuarios']
-             })
-             let usuarios = await DB.Usuario.findAll({
-                include:['codPost']
-            })
+            let productosNuestros = await DB.Producto.findAll({where: { usuario_id: req.session.userId}},{
+                include:['imagenes','likes','categorias','usuarios']
+                })
             
-             res.render('index',{productosDeMuestra,productos,usuarios})
+            let likes = await DB.Like1.findAll({ where:{usuario_id: req.session.userId, me_gusta: 1}},{
+                include:['usuarios','productos']
+             })
+             
+             let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
+                {include:['codPost']
+            })
+            console.log(likes)
+             res.render('index',{productosDeMuestra,usuarios,productosNuestros,likes})
             },
 
     //DETALLE DE PRODUCTO CON SU ID
@@ -78,8 +84,9 @@ const userController ={
         let productos = await DB.Producto.findAll({
             include:['imagenes','likes','categorias','usuarios']
         })
-        let usuarios = await DB.Usuario.findAll({
-           include:['codPost']
+        let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
+            {include:['codPost']
+        
        })
        let imagen = await DB.Imagen.findAll({ where: { prod_id: req.params.id } },
         {include:['productos']
@@ -93,21 +100,35 @@ const userController ={
     //FORMULARIO DE CARGA DE PRODUCTO
     cargaProduct: async (req, res) =>{
         let categorias =  await DB.Categoria.findAll()
-        res.render('formulario-carga',{categorias})
+        let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
+            {include:['codPost']
+        })
+        res.render('formulario-carga',{categorias,usuarios})
     },
 
     //EDITAR UN PRODUCTO CON SU ID
     edit: async (req,res,next) =>{
+        let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
+            {include:['codPost']
+        })
+        let categorias =  await DB.Categoria.findAll()
         let producto = await DB.Producto.findByPk(req.params.id,{
             include:['imagenes','likes','categorias','usuarios']
         })
-        res.render('edit-form', {producto:productToEdit})
+        let imagen = await DB.Imagen.findAll({ where: { prod_id: req.params.id } },
+            {include:['productos']
+        })
+        res.render('edit-form', {producto,imagen,categorias,usuarios})
     },
 
     //CARGAR UN PRODUCTO EN LA BASE DE DATOS
       store: async (req,res) =>{
           let producto = {
-              ...req.body,
+            nombre: req.body.nombre,
+            categoria: req.body.categoria,
+            descripcion : req.body.descripcion,
+            precio : req.body.precio,
+            usuario_id: req.session.userId,
             foto_portada : req.files[0].filename
           } 
           try{
@@ -129,7 +150,6 @@ const userController ={
                 producto.nombre = req.body.nombre,
                 producto.categoria = req.body.categoria,
                 producto.descripcion = req.body.descripcion,
-                producto.estado = req.body.estado,
                 producto.precio = req.body.precio,
                 producto.zona = req.body.zona,
                 producto.imagen = req.body.imagen
@@ -163,7 +183,7 @@ const userController ={
             email : req.body.email,
             localidad: req.body.localidad,
             //Contraseña encriptada con BCRYPT
-            contraseña: bcrypt.hashSync(req.body.contraseña, 15),
+            password: bcrypt.hashSync(req.body.contraseña),
             avatar : req.files[0].filename,
         } 
         try{
@@ -171,7 +191,8 @@ const userController ={
             res.redirect('/')
         }
         catch (error){
-            res.send ('error')
+            console.log (error)
+            res.send (error.message)
         }
     },
 

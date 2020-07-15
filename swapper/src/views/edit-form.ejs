@@ -13,9 +13,11 @@
 <div class="container">
   <div class="row">
 <div class="col-lg-4 col-md-4 .hidden-sm d-none d-mg-block d-lg-block">
-  <img src="/images/products/<%=producto.imagen%>" id="imgslider">
-  <img src="/images/products/<%=producto.imagen%>" id="imgslider">
-  <img src="/images/products/<%=producto.imagen%>" id="imgslider"></div>
+  <%imagen.forEach(images =>{%>
+  <img src="/images/products/<%=images.imagenes%>" id="imgslider">
+  
+  <% })%>
+</div>
 <div class="col-lg-8 col-md-12 col-12">
 <div class="wrapper fadeInDown">
 	
@@ -29,32 +31,18 @@
   
     <!-- Login Form -->
     
-	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="post">
+	  <form action="/products/edit/<%=producto.id%>?_method=PUT" method="post" enctype="multipart/form-data">
       <label for="nombre">Nombre del producto</label><br>
       <input type="text" class="form-control" id="nombre" name="nombre" value="<%=producto.nombre%>">
 
             
-            <label for="categoria">Categoria</label><br>
-            <select id="categoria" type="categoria" name="categoria">
-              <option value="" disabled selected hidden><%=producto.categoria%></option>
-              <option >Electronica</option>
-              <option >Moda</option>
-              <option >Hogar</option>
-              <option >Inmuebles</option>
-              <option >Bazar</option>
-            </select><br>
-
-            
-
-            <label for="estado">Estado</label><br>
-              <select type="categoria" name="estado" id="estado">
-                <option value="nuevo">&#9733; &#9734; &#9734; &#9734; &#9734</option>
-                <option value="usado">&#9733; &#9733; &#9734; &#9734; &#9734</option>
-                <option value="nuevo">&#9733; &#9733; &#9733; &#9734; &#9734</option>
-                <option value="" disabled selected hidden>&#9733; &#9733; &#9733; &#9733; &#9734</option>
-                <option value="nuevo">&#9733; &#9733; &#9733; &#9733; &#9733</option>
-                
-              </select>
+      <label for="categoria">Categoria</label><br>
+      <select type="text" class="form-control" id="categoria" name="categoria" value="categoria">
+        <% categorias.forEach(categoria => {%> 
+        <option value="<%=categoria.id%>" placeholder="cat"><%=categoria.nombre%></option>
+        <%})%>
+      </select>
+      <br>
 
               <label for="precio">Precio del producto</label><br>
                 <input id="precio" name="precio" type="text" value="<%=producto.precio%>">
@@ -62,15 +50,12 @@
             <label for="descripcion">Descripcion del producto</label><br>
             <textarea type="text" class="form-control" id="descripcion" name="descripcion" rows="8" value="<%=producto.descripcion%>"><%=producto.descripcion%></textarea><br>
 
-            <label for="zona">Zona</label><br>
-                <input id="zona" name="zona" type="text" class="form-control" value="<%=producto.zona%>">
-
                 <label for="fotos">Cargar Fotos</label>
-                
-                  <div class="custom-file" style="width: 90%;">
-                    <input type="text" class="custom-file-input" id="customFile" name="customFile">
-                    <label class="custom-file-label" for="customFile">Fotos</label>
-                  </div>
+                <div class="custom-file" style="width: 90%;">
+                  <input type="file" class="custom-file-input" id="customFile" name="foto_portada">
+                  <label class="custom-file-label" for="customFile">Fotos</label>
+                </div>
+                  
                 
 		<br>
 		<br>

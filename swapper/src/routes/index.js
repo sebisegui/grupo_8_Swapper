@@ -30,7 +30,7 @@ router.get('/',userController.login);
 
 router.post('/', [
   check('email').isEmail().withMessage('Email invalido'),
-  check('contraseña').isLength({min: 8}).withMessage('La contraseña no es correcta')
+  check('password').isLength({min: 8}).withMessage('La contraseña no es correcta')
 ] ,userController.validationLogin)
 
 //Logout

@@ -4,7 +4,7 @@ module.exports= (sequelize,DataTypes) =>{
         {
             usuario_id:DataTypes.INTEGER,
             producto_id:DataTypes.INTEGER,
-            like:DataTypes.TINYINT,
+            me_gusta:DataTypes.TINYINT,
         },
         {
             tableName:'like1',
