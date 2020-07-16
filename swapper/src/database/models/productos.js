@@ -25,9 +25,7 @@ module.exports= (sequelize,DataTypes) =>{
         });
         producto.belongsToMany(models.Usuario,{
             as:'likes',
-            through: 'like1',
-            foreignKey: 'producto_id',
-            otherKey:'usuario_id',
+            through: 'Like1',
             timestamps:false
         })
         

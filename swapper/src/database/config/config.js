@@ -4,6 +4,9 @@ module.exports = {
     "password": null,
     "database": "swapper",
     "host": "127.0.0.1",
+    "define":{
+      "underscored": true
+    },
     "dialect": "mysql",
   },
   "test": {

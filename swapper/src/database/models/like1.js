@@ -10,6 +10,10 @@ module.exports= (sequelize,DataTypes) =>{
             tableName:'like1',
             timestamps:false}
     );
+    
+
+
+
     return like1
 
 }

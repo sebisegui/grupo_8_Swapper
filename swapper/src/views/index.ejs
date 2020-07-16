@@ -44,23 +44,27 @@
 
                   
 
-                  <% likes.forEach(like =>{%> 
-
-                    
+                  
+                  <% filtrados.forEach(producto => {%> 
+                                      
                     
                   <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
                     <div class="hovereffect">
-                      <img src="" style="width: 100%;margin-right: auto;">
+                      <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
                           <div class="overlay">
-                              <h2><%= like.productos.nombre %></h2>
+                              <h2><%=producto.usuarios.nombre%></h2>
                       <p>
-                        <a href="/products/<%=like.productos.id%>">More info</a>
+                        
+                        <a style="font-size:x-large;"><%=producto.usuarios.telefono%></a><br>
+                        <a href='/products/<%=producto.id%>'>More info</a>
+                        
                       </p>
                           </div>
                   </div>
 
                   </div>
-                  <% })%> 
+                  <% })%>
+                  
                 </div>
                
               </div>
@@ -109,17 +113,17 @@
   <div class="col-lg-9 col-12 col-md-12 " id="colProduct" >
         
     <div class="row" style="margin-top: 40px;">
-      <%productosDeMuestra.forEach(producto =>{%> 
+      <%filtrados3.forEach(producto =>{%> 
         
             <div class="col-12 col-md-6 col-lg-4 contenedor-producto" style>
               <div class="card h-100" style="border-radius: 30px; box-shadow: black;">
-                <div class="d-flex align-items-center" style="height: 320px;">
-                <a href="/products/<%=producto.id%>" ><img src="/images/products/<%=producto.foto_portada%>" alt="imagen de producto"  class= "foto-productos">                  
+                <div class="d-flex align-items-center" style="height: 350px;">
+                <a href="/products/<%=producto.id%>" ><img src="/images/products/<%=producto.foto_portada%>" alt="imagen de producto"  class= "foto-productos" style="max-height: 320px;">                  
                 </a>
               </div>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#"><%= producto.nombre %></a>
+                    <a href="/products/<%=producto.id%>"><%= producto.nombre %></a>
                   </h4>
                   
                   <p class="card-text">Donde se encuentra:  </p>

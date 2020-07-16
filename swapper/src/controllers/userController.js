@@ -65,15 +65,19 @@ const userController ={
                 include:['imagenes','likes','categorias','usuarios']
                 })
             
-            let likes = await DB.Like1.findAll({ where:{usuario_id: req.session.userId, me_gusta: 1}},{
-                include:['usuarios','productos']
-             })
-             
-             let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
+            let productos= await DB.Producto.findAll({
+                include:{all:true}})
+                
+
+            let filtrados = productos.filter((unProd)=> unProd.likes.some((elemento)=> elemento.Like1.usuario_id == req.session.userId && elemento.Like1.me_gusta == 1))
+            let filtrados2 = productos.filter((unProd1)=> unProd1.usuario_id != req.session.userId)
+            let filtrados3 = filtrados2.filter((unProd2)=> unProd2.likes.some((elemento)=> elemento.Like1.me_gusta == null))
+
+            let usuarios = await DB.Usuario.findOne( {where: { id: req.session.userId}},
                 {include:['codPost']
             })
-            console.log(likes)
-             res.render('index',{productosDeMuestra,usuarios,productosNuestros,likes})
+            
+             res.render('index',{filtrados3,usuarios,productosNuestros,filtrados})
             },
 
     //DETALLE DE PRODUCTO CON SU ID
@@ -159,14 +163,19 @@ const userController ={
     },       
     //ELIMINAR PRODUCTO 
     delete: (req,res) => { 
-        let deleteId = req.params.id;
-        listaProductosJS.forEach(producto => {
-            if(deleteId == producto.id){
-                let posicionProducto = listaProductosJS.indexOf(producto);
-                listaProductosJS.splice(posicionProducto,1)
-            }});
-            fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
-            res.redirect('/products/')
+        DB.Producto.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        // let deleteId = req.params.id;
+        // listaProductosJS.forEach(producto => {
+        //     if(deleteId == producto.id){
+        //         let posicionProducto = listaProductosJS.indexOf(producto);
+        //         listaProductosJS.splice(posicionProducto,1)
+        //     }});
+        //     fs.writeFileSync(productsPath,JSON.stringify(listaProductosJS))
+             res.redirect('/products/')
     },
     //FORMULARIO DE REGISTRO
     register: (req,res) =>{
