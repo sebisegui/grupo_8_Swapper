@@ -68,7 +68,6 @@ const userController ={
             let productos= await DB.Producto.findAll({
                 include:{all:true}})
                 
-
             let filtrados = productos.filter((unProd)=> unProd.likes.some((elemento)=> elemento.Like1.usuario_id == req.session.userId && elemento.Like1.me_gusta == 1))
             let filtrados2 = productos.filter((unProd1)=> unProd1.usuario_id != req.session.userId)
             let filtrados3 = filtrados2.filter((unProd2)=> unProd2.likes.some((elemento)=> elemento.Like1.me_gusta == null))

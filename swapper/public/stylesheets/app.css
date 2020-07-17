@@ -3,6 +3,13 @@
 
 /*detalle*/
 
+#tituloBienvenida{
+  text-align: center;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 120px;
+  margin-bottom: 120px;
+}
+
 .container2{
 
   margin-left: 0px;
@@ -11,6 +18,12 @@
   width: 100%;
 }
 
+.fondoLogin {
+  background-image: url('../images/fondo-login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0,7;
+}
 /*hoover */
 .hovereffect {
   width: 100%;
@@ -132,7 +145,9 @@ h2 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+
 }
+
 
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -146,6 +161,7 @@ h2 {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+  opacity: 0.9;
 }
 
 #formFooter {
