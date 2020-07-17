@@ -12,48 +12,96 @@
             <div class="row">
 
               <!-- --------------------COLUMNA MATCHES--------------------- -->
-              <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap">
+              <div class=".hidden-sm col-lg-3 col-md-3 d-none d-mg-block d-lg-block" id="colswap" style="height: auto;padding-left: 15px;padding-right: 15px;">
 
-                <div class="slider overflow-auto custom-scrollbar-css p-2 " style="height: 800px;margin: 10px;margin-top: 20px;">
-        
-                
-                
-                  <ul class="slides" >
-        
-                  
+                <div class="slider slider custom-scrollbar-css p-2  " style="width: auto; height: 1405px; overflow-y: scroll;padding: 0px;">
+            
+                  <input type="radio" name="toggle" id="btn-1" checked>
+                  <input type="radio" name="toggle" id="btn-2">
                       
-                      <div>
-                        <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;;">
-                        <h2>Swapp</h2>
-                      </div>
-        
-                      <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
-
-                        <% productos.forEach(producto =>{%> 
-
-                        <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
-                          <div class="hovereffect">
-                            <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
-                                <div class="overlay">
-                                    <h2><%= producto.nombre %></h2>
-                            <p>
-                              <a href="/products/<%=producto.id%>">More info</a>
-                            </p>
-                                </div>
-                        </div>
-      
-                        </div>
-                        <% })%> 
-                      </div>
-        
+                    <div class="slider-controls" style="height: 60px;">
                         
-        
+                        <label for="btn-1"></label>
+                        
+                        <label for="btn-2"></label>
+                        
                     </div>
-                  
-                  </ul>
+                    
+                      <ul class="slides">
+            
+                        <li class="slide">
+                          
+                          <div>
+                            <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+            
+                            <h2 style="height:30px; margin: 30px;margin-top: 50px;">Swapp</h2>
+                            </div>
+            
+                            <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+            
+                              
+            
+                              
+                              <% filtrados.forEach(producto => {%> 
+                                                  
+                                
+                              <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
+                                <div class="hovereffect">
+                                  <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
+                                      <div class="overlay">
+                                          <h2><%=producto.usuarios.nombre%></h2>
+                                  <p>
+                                    <a style="font-size:large; margin-top: -20px;"><%=producto.usuarios.telefono%></a><br>
+                                    <a href='/products/<%=producto.id%>'>More info</a>
+                                    
+                                  </p>
+                                      </div>
+                              </div>
+            
+                              </div>
+                              <% })%>
+                              
+                            </div>
+                           
+                          </div>
+                      
+                        </li>
+            
+                         <li class="slide">
+                          
+                             <div class="col-12 col-md-12 col-lg-12" style="text-align: center;margin-top: 15px;margin-bottom: 0px;">
+                              <h2 style="height:30px; margin: 30px;margin-top: 50px;">Mis productos</h2>
+                             
+            
+                              <div class="col-12 col-md-12 col-lg-12" id="Columna-matches">
+            
+                               <% productosNuestros.forEach(producto => {%> 
+                                <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
+            
+                                <div class="hovereffect">
+                                  <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
+                                      <div class="overlay">
+                                          <a href='/products/<%=producto.id%>'><%= producto.nombre %></a><br>
+                                          <a href='/products/edit/<%=producto.id%>' class='editar'>
+                                            <button type="submit" class="btn btn-secondary btn-sm">Editar</button>
+                                           </a><br>
+                                      
+                                        
+                                            <form action="/products/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                              <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                            </form>
+                                      </div>
+                              </div> 
+                                                 
+                               </div>                                  
+                                <% })%> 
+                              </div>
+                          </div>         
+                         </li>                       
+                      </ul>
                 </div>
-                
-                </div>
+                    
+              </div> 
             
       
            <!-- --------------------COLUMNA MATCHES--------------------- -->
@@ -64,28 +112,8 @@
                 <h1 class="detallesProducto" style="text-align: center;"><%= productoDetalle.nombre %></h1>
                 <div class="row">
                   <div class="col-lg-4 col-md-5 col-12 mb-4" style="align-content: center;">
-                  <div class="slider" >
-                    <input type="radio" name="toggle" id="btn-1" checked>
-                    <input type="radio" name="toggle" id="btn-2">
-                    <input type="radio" name="toggle" id="btn-3">
-                  
-                    <div class="slider-controls">
-                      <label for="btn-1"></label>
-                      <label for="btn-2"></label>
-                      <label for="btn-3"></label>
-                    </div>
-                  
-                    <ul class="slides">
-                      <%imagen.forEach(images =>{%>
-                      <li class="slide">
-                        <div>
-                        <img src="/images/products/<%=images.imagenes %>" id="imgslider">
-                      </div>
-                    
-                     </li><% })%>
-               
-                      </li>
-                    </ul>
+                  <div class="d-flex align-items-center slider "  >                       
+                        <img src="/images/products/<%=productoDetalle.foto_portada%>" id="imgslider">                 
                   </div>
                 </div>
                 <div class="col-lg-7 col-md-7 col-12" id="description-card" >
@@ -120,14 +148,14 @@
                   </div>
                      
               </div>      
-              <div class="col-lg-4" style="margin-left: 0px;">
+              <!-- <div class="col-lg-4" style="margin-left: 0px;">
                 <div class="botones">
                   <a class="btn btn-outline-danger" href="#" id="butnok" >
                     <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></a>
                   <a class="btn btn-outline-success" id="butok" href="#" >
                     <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
                   </div>
-              </div>   
+              </div>    -->
             </div>
             <!-- --------------------DETALLE PRODUCTOS--------------------- -->
           </div>

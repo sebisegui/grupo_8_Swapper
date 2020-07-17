@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userController = require('../controllers/userController');
+var siteController = require('../controllers/siteController');
 const app = require('../app');
 const path = require ('path')
 const multer = require ('multer');
@@ -26,44 +26,47 @@ var storage = multer.diskStorage({
 
 
 // HOME LOGIN
-router.get('/',userController.login);
+router.get('/',siteController.login);
 
 router.post('/', [
   check('email').isEmail().withMessage('Email invalido'),
   check('password').isLength({min: 8}).withMessage('La contraseña no es correcta')
-] ,userController.validationLogin)
+] ,siteController.validationLogin)
 
 //Logout
-router.get('/logout',userController.logout)
+router.get('/logout',siteController.logout)
 
 // LISTA PRODUCTOS
 
-router.get('/products', userController.index);
+router.get('/products', siteController.index);
 
 // FORMULARIO CARGA PRODUCTO
 
-router.get('/products/create', userController.cargaProduct);
-router.post('/products/create', upload.any(), userController.store)
+router.get('/products/create', siteController.cargaProduct);
+router.post('/products/create', upload.any(), siteController.store)
 
 // DETALLE DE PRODUCTO
 
-router.get('/products/:id', userController.detalleProduct);
+router.get('/products/:id', siteController.detalleProduct);
 
 // FORMULARIO EDIT PRODUCTO
 
-router.get('/products/edit/:id', userController.edit)
-router.put('/products/edit/:id', userController.update)
+router.get('/products/edit/:id', siteController.edit)
+router.put('/products/edit/:id',upload.any(), siteController.update)
 
 // ELIMINAR PRODUCTO
 
-router.delete('/products/:id', userController.delete)
+router.delete('/products/:id', siteController.delete)
 
 // FORMULARIO REGISTRO
 
-router.get('/register', userController.register);
+router.get('/register', siteController.register);
 
 //Ruta por Multer para subir foto
-router.post('/register',upload.any(), userController.userStore)
+router.post('/register',upload.any(), siteController.userStore)
+
+//botones likes
+router.post('/products/:id', siteController.likes)
 
 
 

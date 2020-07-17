@@ -54,8 +54,7 @@
                           <div class="overlay">
                               <h2><%=producto.usuarios.nombre%></h2>
                       <p>
-                        
-                        <a style="font-size:x-large;"><%=producto.usuarios.telefono%></a><br>
+                        <a style="font-size:large; margin-top: -20px;"><%=producto.usuarios.telefono%></a><br>
                         <a href='/products/<%=producto.id%>'>More info</a>
                         
                       </p>
@@ -83,9 +82,9 @@
                     <div class="col-12 col-md-12 col-lg-12" id="matches" style="margin-bottom: 10px;">
 
                     <div class="hovereffect">
-                      <img src="/images/products/<%=producto.foto_portada%>" style="width: 100%;margin-right: auto;">
+                      <img src="/images/products/<%=producto.foto_portada%>"  style="width: 100%;margin-right: auto;">
                           <div class="overlay">
-                              <h2><%= producto.nombre %></h2><br>
+                              <a href='/products/<%=producto.id%>'><%= producto.nombre %></a><br>
                               <a href='/products/edit/<%=producto.id%>' class='editar'>
                                 <button type="submit" class="btn btn-secondary btn-sm">Editar</button>
                                </a><br>
@@ -126,13 +125,17 @@
                     <a href="/products/<%=producto.id%>"><%= producto.nombre %></a>
                   </h4>
                   
-                  <p class="card-text">Donde se encuentra:  </p>
-                  <div class="botones">
-                    <button class="btn btn-outline-danger" href="/products" id="butnok" type="button" value="1">
+                  <p class="card-text">Donde se encuentra:<%= producto.usuarios.localidad %>  </p>
+                  
+                    <form action="/products/<%=producto.id%>" method="POST"> 
+                      <div class="botones">
+                    <button class="btn btn-outline-danger" href="/products" id="butnok" type="submit" value="0" name="me_gusta">
                       <i class="fa fa-times fa-3x" aria-hidden="true"></i> <br></button>
-                    <a class="btn btn-outline-success" id="butok" href="#" >
-                      <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></a>
+                    <button class="btn btn-outline-success" id="butok" href="/products" type="submit" value="1" name="me_gusta">
+                      <i class="fa fa-check fa-3x" aria-hidden="true"></i> <br></button>
                     </div>
+                    </form>
+                    
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">Estado del producto: &#9733; &#9733; &#9733; &#9733; &#9734;</small>
